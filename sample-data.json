@@ -1,0 +1,797 @@
+{
+  "CrmAccount": [
+    {
+      "id": "00000000-0098-0001-0000-000000000001",
+      "name": "Account #1 — Enterprise Primary Record",
+      "email": "ops-team-1@rapider-enterprise.io",
+      "phone": "+1-555-019-2801",
+      "creditLimit": 10,
+      "currentBalance": 10,
+      "riskFlag": "Account riskFlag configuration (1)",
+      "status": "ACTIVE",
+      "paymentTerms": "Account paymentTerms configuration (1)",
+      "accountOwner": "Account accountOwner configuration (1)",
+      "taxId": "00000000-0098-0001-0000-000000000001",
+      "isDeleted": false,
+      "createdAt": "2026-11-01T10:00:00Z",
+      "updatedAt": "2026-11-01T10:00:00Z",
+      "accountCode": "CA-2026-0001",
+      "accountType": "Account accountType configuration (1)",
+      "customerTier": "Account customerTier configuration (1)",
+      "supportSlaTier": "Account supportSlaTier configuration (1)",
+      "primaryDomain": "Account primaryDomain configuration (1)",
+      "parentAccountId": "00000000-0098-0001-0000-000000000001",
+      "legalEntityId": "00000000-0098-0001-0000-000000000001",
+      "industry": "Account industry configuration (1)",
+      "revenue": 1250,
+      "website": "Account website configuration (1)",
+      "ownerPersonId": "00000000-0098-0001-0000-000000000001",
+      "description": "Account description configuration (1)",
+      "type": "Account type configuration (1)"
+    },
+    {
+      "id": "00000000-0098-0001-0000-000000000002",
+      "name": "Account #2 — Enterprise Operations Record",
+      "email": "ops-team-2@rapider-enterprise.io",
+      "phone": "+1-555-019-2802",
+      "creditLimit": 20,
+      "currentBalance": 20,
+      "riskFlag": "Account riskFlag configuration (2)",
+      "status": "IN_PROGRESS",
+      "paymentTerms": "Account paymentTerms configuration (2)",
+      "accountOwner": "Account accountOwner configuration (2)",
+      "taxId": "00000000-0098-0001-0000-000000000002",
+      "isDeleted": false,
+      "createdAt": "2026-11-02T10:00:00Z",
+      "updatedAt": "2026-11-02T10:00:00Z",
+      "accountCode": "CA-2026-0002",
+      "accountType": "Account accountType configuration (2)",
+      "customerTier": "Account customerTier configuration (2)",
+      "supportSlaTier": "Account supportSlaTier configuration (2)",
+      "primaryDomain": "Account primaryDomain configuration (2)",
+      "parentAccountId": "00000000-0098-0001-0000-000000000002",
+      "legalEntityId": "00000000-0098-0001-0000-000000000002",
+      "industry": "Account industry configuration (2)",
+      "revenue": 2500,
+      "website": "Account website configuration (2)",
+      "ownerPersonId": "00000000-0098-0001-0000-000000000002",
+      "description": "Account description configuration (2)",
+      "type": "Account type configuration (2)"
+    },
+    {
+      "id": "00000000-0098-0001-0000-000000000003",
+      "name": "Account #3 — Enterprise Compliance Record",
+      "email": "ops-team-3@rapider-enterprise.io",
+      "phone": "+1-555-019-2803",
+      "creditLimit": 30,
+      "currentBalance": 30,
+      "riskFlag": "Account riskFlag configuration (3)",
+      "status": "COMPLETED",
+      "paymentTerms": "Account paymentTerms configuration (3)",
+      "accountOwner": "Account accountOwner configuration (3)",
+      "taxId": "00000000-0098-0001-0000-000000000003",
+      "isDeleted": false,
+      "createdAt": "2026-11-03T10:00:00Z",
+      "updatedAt": "2026-11-03T10:00:00Z",
+      "accountCode": "CA-2026-0003",
+      "accountType": "Account accountType configuration (3)",
+      "customerTier": "Account customerTier configuration (3)",
+      "supportSlaTier": "Account supportSlaTier configuration (3)",
+      "primaryDomain": "Account primaryDomain configuration (3)",
+      "parentAccountId": "00000000-0098-0001-0000-000000000003",
+      "legalEntityId": "00000000-0098-0001-0000-000000000003",
+      "industry": "Account industry configuration (3)",
+      "revenue": 3750,
+      "website": "Account website configuration (3)",
+      "ownerPersonId": "00000000-0098-0001-0000-000000000003",
+      "description": "Account description configuration (3)",
+      "type": "Account type configuration (3)"
+    }
+  ],
+  "DatReportSubscription": [
+    {
+      "id": "00000000-0098-0002-0000-000000000001",
+      "dashboardId": "00000000-0098-0001-0000-000000000001",
+      "name": "Report Subscription #1 — Enterprise Primary Record",
+      "scheduleCron": "Report Subscription scheduleCron configuration (1)",
+      "exportFormat": "2026-11-01T10:00:00Z",
+      "recipientUserIds": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "presetFiltersJson": {
+        "configured": true,
+        "tier": 1
+      },
+      "isEnabled": true,
+      "lastDeliveredAt": "2026-11-01T10:00:00Z",
+      "lastDeliveryFileId": "00000000-0098-0001-0000-000000000001",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0002-0000-000000000002",
+      "dashboardId": "00000000-0098-0001-0000-000000000002",
+      "name": "Report Subscription #2 — Enterprise Operations Record",
+      "scheduleCron": "Report Subscription scheduleCron configuration (2)",
+      "exportFormat": "2026-11-02T10:00:00Z",
+      "recipientUserIds": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "presetFiltersJson": {
+        "configured": true,
+        "tier": 2
+      },
+      "isEnabled": true,
+      "lastDeliveredAt": "2026-11-02T10:00:00Z",
+      "lastDeliveryFileId": "00000000-0098-0001-0000-000000000002",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0002-0000-000000000003",
+      "dashboardId": "00000000-0098-0001-0000-000000000003",
+      "name": "Report Subscription #3 — Enterprise Compliance Record",
+      "scheduleCron": "Report Subscription scheduleCron configuration (3)",
+      "exportFormat": "2026-11-03T10:00:00Z",
+      "recipientUserIds": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "presetFiltersJson": {
+        "configured": true,
+        "tier": 3
+      },
+      "isEnabled": false,
+      "lastDeliveredAt": "2026-11-03T10:00:00Z",
+      "lastDeliveryFileId": "00000000-0098-0001-0000-000000000003",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DatSemanticModel": [
+    {
+      "id": "00000000-0098-0003-0000-000000000001",
+      "code": "DSM-2026-0001",
+      "name": "Semantic Model #1 — Enterprise Primary Record",
+      "sourceType": "Semantic Model sourceType configuration (1)",
+      "entitiesJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "joinsJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "primaryGrain": "Semantic Model primaryGrain configuration (1)",
+      "executionMode": "Semantic Model executionMode configuration (1)",
+      "refreshCron": "Semantic Model refreshCron configuration (1)",
+      "lastRefreshedAt": "2026-11-01T10:00:00Z",
+      "certificationStatus": "Semantic Model certificationStatus configuration (1)",
+      "certifiedByUserId": "00000000-0098-0001-0000-000000000001",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0003-0000-000000000002",
+      "code": "DSM-2026-0002",
+      "name": "Semantic Model #2 — Enterprise Operations Record",
+      "sourceType": "Semantic Model sourceType configuration (2)",
+      "entitiesJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "joinsJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "primaryGrain": "Semantic Model primaryGrain configuration (2)",
+      "executionMode": "Semantic Model executionMode configuration (2)",
+      "refreshCron": "Semantic Model refreshCron configuration (2)",
+      "lastRefreshedAt": "2026-11-02T10:00:00Z",
+      "certificationStatus": "Semantic Model certificationStatus configuration (2)",
+      "certifiedByUserId": "00000000-0098-0001-0000-000000000002",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0003-0000-000000000003",
+      "code": "DSM-2026-0003",
+      "name": "Semantic Model #3 — Enterprise Compliance Record",
+      "sourceType": "Semantic Model sourceType configuration (3)",
+      "entitiesJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "joinsJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "primaryGrain": "Semantic Model primaryGrain configuration (3)",
+      "executionMode": "Semantic Model executionMode configuration (3)",
+      "refreshCron": "Semantic Model refreshCron configuration (3)",
+      "lastRefreshedAt": "2026-11-03T10:00:00Z",
+      "certificationStatus": "Semantic Model certificationStatus configuration (3)",
+      "certifiedByUserId": "00000000-0098-0001-0000-000000000003",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "FinInvoice": [
+    {
+      "id": "00000000-0098-0004-0000-000000000001",
+      "legalEntityId": "00000000-0098-0001-0000-000000000001",
+      "type": "Invoice type configuration (1)",
+      "partnerName": "Invoice #1 — Enterprise Primary Record",
+      "invoiceDate": "2026-11-01T10:00:00Z",
+      "dueDate": "2026-11-01T10:00:00Z",
+      "totalAmount": 1250,
+      "currency": "USD",
+      "status": "ACTIVE",
+      "isDeleted": false,
+      "invoiceNumber": "FI-2026-0001",
+      "accountId": "00000000-0098-0001-0000-000000000001",
+      "billingProfileId": "00000000-0098-0001-0000-000000000001",
+      "subscriptionId": "00000000-0098-0001-0000-000000000001",
+      "customerOrderId": "00000000-0098-0001-0000-000000000001",
+      "issueDate": "2026-11-01T10:00:00Z",
+      "subtotalAmount": 1250,
+      "taxAmount": 1250,
+      "openAmount": 1250,
+      "currencyCode": "FI-2026-0001",
+      "disputeStatus": "Invoice disputeStatus configuration (1)",
+      "eInvoiceClearanceStatus": "Invoice eInvoiceClearanceStatus configuration (1)",
+      "customerName": "Invoice #1 — Enterprise Primary Record",
+      "createdAt": "2026-11-01T10:00:00Z",
+      "updatedAt": "2026-11-01T10:00:00Z"
+    },
+    {
+      "id": "00000000-0098-0004-0000-000000000002",
+      "legalEntityId": "00000000-0098-0001-0000-000000000002",
+      "type": "Invoice type configuration (2)",
+      "partnerName": "Invoice #2 — Enterprise Operations Record",
+      "invoiceDate": "2026-11-02T10:00:00Z",
+      "dueDate": "2026-11-02T10:00:00Z",
+      "totalAmount": 2500,
+      "currency": "USD",
+      "status": "IN_PROGRESS",
+      "isDeleted": false,
+      "invoiceNumber": "FI-2026-0002",
+      "accountId": "00000000-0098-0001-0000-000000000002",
+      "billingProfileId": "00000000-0098-0001-0000-000000000002",
+      "subscriptionId": "00000000-0098-0001-0000-000000000002",
+      "customerOrderId": "00000000-0098-0001-0000-000000000002",
+      "issueDate": "2026-11-02T10:00:00Z",
+      "subtotalAmount": 2500,
+      "taxAmount": 2500,
+      "openAmount": 2500,
+      "currencyCode": "FI-2026-0002",
+      "disputeStatus": "Invoice disputeStatus configuration (2)",
+      "eInvoiceClearanceStatus": "Invoice eInvoiceClearanceStatus configuration (2)",
+      "customerName": "Invoice #2 — Enterprise Operations Record",
+      "createdAt": "2026-11-02T10:00:00Z",
+      "updatedAt": "2026-11-02T10:00:00Z"
+    },
+    {
+      "id": "00000000-0098-0004-0000-000000000003",
+      "legalEntityId": "00000000-0098-0001-0000-000000000003",
+      "type": "Invoice type configuration (3)",
+      "partnerName": "Invoice #3 — Enterprise Compliance Record",
+      "invoiceDate": "2026-11-03T10:00:00Z",
+      "dueDate": "2026-11-03T10:00:00Z",
+      "totalAmount": 3750,
+      "currency": "USD",
+      "status": "COMPLETED",
+      "isDeleted": false,
+      "invoiceNumber": "FI-2026-0003",
+      "accountId": "00000000-0098-0001-0000-000000000003",
+      "billingProfileId": "00000000-0098-0001-0000-000000000003",
+      "subscriptionId": "00000000-0098-0001-0000-000000000003",
+      "customerOrderId": "00000000-0098-0001-0000-000000000003",
+      "issueDate": "2026-11-03T10:00:00Z",
+      "subtotalAmount": 3750,
+      "taxAmount": 3750,
+      "openAmount": 3750,
+      "currencyCode": "FI-2026-0003",
+      "disputeStatus": "Invoice disputeStatus configuration (3)",
+      "eInvoiceClearanceStatus": "Invoice eInvoiceClearanceStatus configuration (3)",
+      "customerName": "Invoice #3 — Enterprise Compliance Record",
+      "createdAt": "2026-11-03T10:00:00Z",
+      "updatedAt": "2026-11-03T10:00:00Z"
+    }
+  ],
+  "OpsSupplierProfile": [
+    {
+      "id": "00000000-0098-0005-0000-000000000001",
+      "name": "Supplier #1 — Enterprise Primary Record",
+      "taxId": "00000000-0098-0001-0000-000000000001",
+      "email": "ops-team-1@rapider-enterprise.io",
+      "phone": "+1-555-019-2801",
+      "paymentTerms": "Supplier paymentTerms configuration (1)",
+      "currency": "USD",
+      "defaultExpenseAccount": "Supplier defaultExpenseAccount configuration (1)",
+      "address": "Supplier address configuration (1)",
+      "city": "Supplier city configuration (1)",
+      "country": "Supplier country configuration (1)",
+      "verificationState": "Supplier verificationState configuration (1)",
+      "status": "ACTIVE",
+      "isDeleted": false,
+      "remittanceEmail": "ops-team-1@rapider-enterprise.io",
+      "phoneE164": "+1-555-019-2801",
+      "defaultCurrencyCode": "OSP-2026-0001",
+      "defaultExpenseGlAccountId": "00000000-0098-0001-0000-000000000001",
+      "is1099Eligible": true,
+      "supplierCode": "OSP-2026-0001",
+      "legalName": "Supplier #1 — Enterprise Primary Record",
+      "riskTier": "Supplier riskTier configuration (1)",
+      "categories": "Supplier categories configuration (1)",
+      "preferred": true,
+      "crmAccountId": "00000000-0098-0001-0000-000000000001"
+    },
+    {
+      "id": "00000000-0098-0005-0000-000000000002",
+      "name": "Supplier #2 — Enterprise Operations Record",
+      "taxId": "00000000-0098-0001-0000-000000000002",
+      "email": "ops-team-2@rapider-enterprise.io",
+      "phone": "+1-555-019-2802",
+      "paymentTerms": "Supplier paymentTerms configuration (2)",
+      "currency": "USD",
+      "defaultExpenseAccount": "Supplier defaultExpenseAccount configuration (2)",
+      "address": "Supplier address configuration (2)",
+      "city": "Supplier city configuration (2)",
+      "country": "Supplier country configuration (2)",
+      "verificationState": "Supplier verificationState configuration (2)",
+      "status": "IN_PROGRESS",
+      "isDeleted": false,
+      "remittanceEmail": "ops-team-2@rapider-enterprise.io",
+      "phoneE164": "+1-555-019-2802",
+      "defaultCurrencyCode": "OSP-2026-0002",
+      "defaultExpenseGlAccountId": "00000000-0098-0001-0000-000000000002",
+      "is1099Eligible": true,
+      "supplierCode": "OSP-2026-0002",
+      "legalName": "Supplier #2 — Enterprise Operations Record",
+      "riskTier": "Supplier riskTier configuration (2)",
+      "categories": "Supplier categories configuration (2)",
+      "preferred": true,
+      "crmAccountId": "00000000-0098-0001-0000-000000000002"
+    },
+    {
+      "id": "00000000-0098-0005-0000-000000000003",
+      "name": "Supplier #3 — Enterprise Compliance Record",
+      "taxId": "00000000-0098-0001-0000-000000000003",
+      "email": "ops-team-3@rapider-enterprise.io",
+      "phone": "+1-555-019-2803",
+      "paymentTerms": "Supplier paymentTerms configuration (3)",
+      "currency": "USD",
+      "defaultExpenseAccount": "Supplier defaultExpenseAccount configuration (3)",
+      "address": "Supplier address configuration (3)",
+      "city": "Supplier city configuration (3)",
+      "country": "Supplier country configuration (3)",
+      "verificationState": "Supplier verificationState configuration (3)",
+      "status": "COMPLETED",
+      "isDeleted": false,
+      "remittanceEmail": "ops-team-3@rapider-enterprise.io",
+      "phoneE164": "+1-555-019-2803",
+      "defaultCurrencyCode": "OSP-2026-0003",
+      "defaultExpenseGlAccountId": "00000000-0098-0001-0000-000000000003",
+      "is1099Eligible": false,
+      "supplierCode": "OSP-2026-0003",
+      "legalName": "Supplier #3 — Enterprise Compliance Record",
+      "riskTier": "Supplier riskTier configuration (3)",
+      "categories": "Supplier categories configuration (3)",
+      "preferred": false,
+      "crmAccountId": "00000000-0098-0001-0000-000000000003"
+    }
+  ],
+  "DatSourceConnection": [
+    {
+      "id": "00000000-0098-0006-0000-000000000001",
+      "code": "DSC-2026-0001",
+      "name": "Source Connection #1 — Enterprise Primary Record",
+      "connectorType": "Source Connection connectorType configuration (1)",
+      "vaultSecretRef": "Source Connection vaultSecretRef configuration (1)",
+      "customSpecJson": {
+        "configured": true,
+        "tier": 1
+      },
+      "preflightStatus": "Source Connection preflightStatus configuration (1)",
+      "oauthExpiresAt": "2026-11-01T10:00:00Z",
+      "lastTestedAt": "2026-11-01T10:00:00Z",
+      "ownerUserId": "00000000-0098-0001-0000-000000000001",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0006-0000-000000000002",
+      "code": "DSC-2026-0002",
+      "name": "Source Connection #2 — Enterprise Operations Record",
+      "connectorType": "Source Connection connectorType configuration (2)",
+      "vaultSecretRef": "Source Connection vaultSecretRef configuration (2)",
+      "customSpecJson": {
+        "configured": true,
+        "tier": 2
+      },
+      "preflightStatus": "Source Connection preflightStatus configuration (2)",
+      "oauthExpiresAt": "2026-11-02T10:00:00Z",
+      "lastTestedAt": "2026-11-02T10:00:00Z",
+      "ownerUserId": "00000000-0098-0001-0000-000000000002",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0006-0000-000000000003",
+      "code": "DSC-2026-0003",
+      "name": "Source Connection #3 — Enterprise Compliance Record",
+      "connectorType": "Source Connection connectorType configuration (3)",
+      "vaultSecretRef": "Source Connection vaultSecretRef configuration (3)",
+      "customSpecJson": {
+        "configured": true,
+        "tier": 3
+      },
+      "preflightStatus": "Source Connection preflightStatus configuration (3)",
+      "oauthExpiresAt": "2026-11-03T10:00:00Z",
+      "lastTestedAt": "2026-11-03T10:00:00Z",
+      "ownerUserId": "00000000-0098-0001-0000-000000000003",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DatDestinationTarget": [
+    {
+      "id": "00000000-0098-0007-0000-000000000001",
+      "code": "DDT-2026-0001",
+      "name": "Destination Target #1 — Enterprise Primary Record",
+      "targetType": "Destination Target targetType configuration (1)",
+      "warehouseCatalogId": "00000000-0098-0001-0000-000000000001",
+      "targetSuiteKey": "DDT-2026-0001",
+      "vaultSecretRef": "Destination Target vaultSecretRef configuration (1)",
+      "defaultSchemaPrefix": "Destination Target defaultSchemaPrefix configuration (1)",
+      "status": "ACTIVE",
+      "version": 1,
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0007-0000-000000000002",
+      "code": "DDT-2026-0002",
+      "name": "Destination Target #2 — Enterprise Operations Record",
+      "targetType": "Destination Target targetType configuration (2)",
+      "warehouseCatalogId": "00000000-0098-0001-0000-000000000002",
+      "targetSuiteKey": "DDT-2026-0002",
+      "vaultSecretRef": "Destination Target vaultSecretRef configuration (2)",
+      "defaultSchemaPrefix": "Destination Target defaultSchemaPrefix configuration (2)",
+      "status": "IN_PROGRESS",
+      "version": 2,
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0007-0000-000000000003",
+      "code": "DDT-2026-0003",
+      "name": "Destination Target #3 — Enterprise Compliance Record",
+      "targetType": "Destination Target targetType configuration (3)",
+      "warehouseCatalogId": "00000000-0098-0001-0000-000000000003",
+      "targetSuiteKey": "DDT-2026-0003",
+      "vaultSecretRef": "Destination Target vaultSecretRef configuration (3)",
+      "defaultSchemaPrefix": "Destination Target defaultSchemaPrefix configuration (3)",
+      "status": "COMPLETED",
+      "version": 3,
+      "isDeleted": false
+    }
+  ],
+  "DatSyncPipeline": [
+    {
+      "id": "00000000-0098-0008-0000-000000000001",
+      "code": "DSP-2026-0001",
+      "name": "Sync Pipeline #1 — Enterprise Primary Record",
+      "sourceConnectionId": "00000000-0098-0001-0000-000000000001",
+      "destinationTargetId": "00000000-0098-0001-0000-000000000001",
+      "syncMode": "Sync Pipeline syncMode configuration (1)",
+      "historyModeScd2": true,
+      "streamsConfigJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "driftPolicy": "Sync Pipeline driftPolicy configuration (1)",
+      "scheduleCron": "Sync Pipeline scheduleCron configuration (1)",
+      "freshnessSlaMinutes": 10,
+      "monthlyMarCap": 10,
+      "status": "ACTIVE",
+      "version": 1,
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0008-0000-000000000002",
+      "code": "DSP-2026-0002",
+      "name": "Sync Pipeline #2 — Enterprise Operations Record",
+      "sourceConnectionId": "00000000-0098-0001-0000-000000000002",
+      "destinationTargetId": "00000000-0098-0001-0000-000000000002",
+      "syncMode": "Sync Pipeline syncMode configuration (2)",
+      "historyModeScd2": true,
+      "streamsConfigJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "driftPolicy": "Sync Pipeline driftPolicy configuration (2)",
+      "scheduleCron": "Sync Pipeline scheduleCron configuration (2)",
+      "freshnessSlaMinutes": 20,
+      "monthlyMarCap": 20,
+      "status": "IN_PROGRESS",
+      "version": 2,
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0008-0000-000000000003",
+      "code": "DSP-2026-0003",
+      "name": "Sync Pipeline #3 — Enterprise Compliance Record",
+      "sourceConnectionId": "00000000-0098-0001-0000-000000000003",
+      "destinationTargetId": "00000000-0098-0001-0000-000000000003",
+      "syncMode": "Sync Pipeline syncMode configuration (3)",
+      "historyModeScd2": false,
+      "streamsConfigJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "driftPolicy": "Sync Pipeline driftPolicy configuration (3)",
+      "scheduleCron": "Sync Pipeline scheduleCron configuration (3)",
+      "freshnessSlaMinutes": 30,
+      "monthlyMarCap": 30,
+      "status": "COMPLETED",
+      "version": 3,
+      "isDeleted": false
+    }
+  ],
+  "DatReplicationCheckpoint": [
+    {
+      "id": "00000000-0098-0009-0000-000000000001",
+      "pipelineId": "00000000-0098-0001-0000-000000000001",
+      "streamName": "Replication Checkpoint #1 — Enterprise Primary Record",
+      "cursorType": "Replication Checkpoint cursorType configuration (1)",
+      "checkpointStateJson": {
+        "configured": true,
+        "tier": 1
+      },
+      "lastCommittedAt": "2026-11-01T10:00:00Z",
+      "rowsTotalSynced": 10,
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0009-0000-000000000002",
+      "pipelineId": "00000000-0098-0001-0000-000000000002",
+      "streamName": "Replication Checkpoint #2 — Enterprise Operations Record",
+      "cursorType": "Replication Checkpoint cursorType configuration (2)",
+      "checkpointStateJson": {
+        "configured": true,
+        "tier": 2
+      },
+      "lastCommittedAt": "2026-11-02T10:00:00Z",
+      "rowsTotalSynced": 20,
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0009-0000-000000000003",
+      "pipelineId": "00000000-0098-0001-0000-000000000003",
+      "streamName": "Replication Checkpoint #3 — Enterprise Compliance Record",
+      "cursorType": "Replication Checkpoint cursorType configuration (3)",
+      "checkpointStateJson": {
+        "configured": true,
+        "tier": 3
+      },
+      "lastCommittedAt": "2026-11-03T10:00:00Z",
+      "rowsTotalSynced": 30,
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DatSyncRun": [
+    {
+      "id": "00000000-0098-0010-0000-000000000001",
+      "pipelineId": "00000000-0098-0001-0000-000000000001",
+      "triggerType": "Sync Run triggerType configuration (1)",
+      "status": "ACTIVE",
+      "startedAt": "2026-11-01T10:00:00Z",
+      "completedAt": "2026-11-01T10:00:00Z",
+      "rowsExtracted": 10,
+      "rowsUpserted": 10,
+      "rowsQuarantined": 10,
+      "marCounted": 10,
+      "attemptNumber": 10,
+      "errorCode": "DSR-2026-0001",
+      "errorSummary": "Sync Run errorSummary configuration (1)",
+      "discussionChannelId": "00000000-0098-0001-0000-000000000001",
+      "activeWorkItemId": "00000000-0098-0001-0000-000000000001",
+      "idempotencyKey": "DSR-2026-0001",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0010-0000-000000000002",
+      "pipelineId": "00000000-0098-0001-0000-000000000002",
+      "triggerType": "Sync Run triggerType configuration (2)",
+      "status": "IN_PROGRESS",
+      "startedAt": "2026-11-02T10:00:00Z",
+      "completedAt": "2026-11-02T10:00:00Z",
+      "rowsExtracted": 20,
+      "rowsUpserted": 20,
+      "rowsQuarantined": 20,
+      "marCounted": 20,
+      "attemptNumber": 20,
+      "errorCode": "DSR-2026-0002",
+      "errorSummary": "Sync Run errorSummary configuration (2)",
+      "discussionChannelId": "00000000-0098-0001-0000-000000000002",
+      "activeWorkItemId": "00000000-0098-0001-0000-000000000002",
+      "idempotencyKey": "DSR-2026-0002",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0010-0000-000000000003",
+      "pipelineId": "00000000-0098-0001-0000-000000000003",
+      "triggerType": "Sync Run triggerType configuration (3)",
+      "status": "COMPLETED",
+      "startedAt": "2026-11-03T10:00:00Z",
+      "completedAt": "2026-11-03T10:00:00Z",
+      "rowsExtracted": 30,
+      "rowsUpserted": 30,
+      "rowsQuarantined": 30,
+      "marCounted": 30,
+      "attemptNumber": 30,
+      "errorCode": "DSR-2026-0003",
+      "errorSummary": "Sync Run errorSummary configuration (3)",
+      "discussionChannelId": "00000000-0098-0001-0000-000000000003",
+      "activeWorkItemId": "00000000-0098-0001-0000-000000000003",
+      "idempotencyKey": "DSR-2026-0003",
+      "isDeleted": false
+    }
+  ],
+  "DatSchemaDriftEvent": [
+    {
+      "id": "00000000-0098-0011-0000-000000000001",
+      "pipelineId": "00000000-0098-0001-0000-000000000001",
+      "syncRunId": "00000000-0098-0001-0000-000000000001",
+      "streamName": "Schema Drift Event #1 — Enterprise Primary Record",
+      "changeType": "Schema Drift Event changeType configuration (1)",
+      "diffPayloadJson": {
+        "configured": true,
+        "tier": 1
+      },
+      "ContainsPotentialPii": true,
+      "resolutionStatus": "Schema Drift Event resolutionStatus configuration (1)",
+      "resolvedByUserId": "00000000-0098-0001-0000-000000000001",
+      "activeWorkItemId": "00000000-0098-0001-0000-000000000001",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0011-0000-000000000002",
+      "pipelineId": "00000000-0098-0001-0000-000000000002",
+      "syncRunId": "00000000-0098-0001-0000-000000000002",
+      "streamName": "Schema Drift Event #2 — Enterprise Operations Record",
+      "changeType": "Schema Drift Event changeType configuration (2)",
+      "diffPayloadJson": {
+        "configured": true,
+        "tier": 2
+      },
+      "ContainsPotentialPii": true,
+      "resolutionStatus": "Schema Drift Event resolutionStatus configuration (2)",
+      "resolvedByUserId": "00000000-0098-0001-0000-000000000002",
+      "activeWorkItemId": "00000000-0098-0001-0000-000000000002",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0011-0000-000000000003",
+      "pipelineId": "00000000-0098-0001-0000-000000000003",
+      "syncRunId": "00000000-0098-0001-0000-000000000003",
+      "streamName": "Schema Drift Event #3 — Enterprise Compliance Record",
+      "changeType": "Schema Drift Event changeType configuration (3)",
+      "diffPayloadJson": {
+        "configured": true,
+        "tier": 3
+      },
+      "ContainsPotentialPii": false,
+      "resolutionStatus": "Schema Drift Event resolutionStatus configuration (3)",
+      "resolvedByUserId": "00000000-0098-0001-0000-000000000003",
+      "activeWorkItemId": "00000000-0098-0001-0000-000000000003",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ],
+  "DatTransformationModel": [
+    {
+      "id": "00000000-0098-0012-0000-000000000001",
+      "code": "DTM-2026-0001",
+      "name": "Transformation Model #1 — Enterprise Primary Record",
+      "modelType": "Transformation Model modelType configuration (1)",
+      "materialization": "Transformation Model materialization configuration (1)",
+      "upstreamPipelineIds": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "upstreamModelIds": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "sqlOrPrepSpec": "Transformation Model sqlOrPrepSpec configuration (1)",
+      "qualityTestsJson": [
+        "item-1-a",
+        "item-1-b"
+      ],
+      "gitRepositoryId": "00000000-0098-0001-0000-000000000001",
+      "gitCommitSha": "Transformation Model gitCommitSha configuration (1)",
+      "targetWarehouseTableId": "00000000-0098-0001-0000-000000000001",
+      "lastRunStatus": "Transformation Model lastRunStatus configuration (1)",
+      "version": 1,
+      "status": "ACTIVE",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0012-0000-000000000002",
+      "code": "DTM-2026-0002",
+      "name": "Transformation Model #2 — Enterprise Operations Record",
+      "modelType": "Transformation Model modelType configuration (2)",
+      "materialization": "Transformation Model materialization configuration (2)",
+      "upstreamPipelineIds": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "upstreamModelIds": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "sqlOrPrepSpec": "Transformation Model sqlOrPrepSpec configuration (2)",
+      "qualityTestsJson": [
+        "item-2-a",
+        "item-2-b"
+      ],
+      "gitRepositoryId": "00000000-0098-0001-0000-000000000002",
+      "gitCommitSha": "Transformation Model gitCommitSha configuration (2)",
+      "targetWarehouseTableId": "00000000-0098-0001-0000-000000000002",
+      "lastRunStatus": "Transformation Model lastRunStatus configuration (2)",
+      "version": 2,
+      "status": "IN_PROGRESS",
+      "isDeleted": false
+    },
+    {
+      "id": "00000000-0098-0012-0000-000000000003",
+      "code": "DTM-2026-0003",
+      "name": "Transformation Model #3 — Enterprise Compliance Record",
+      "modelType": "Transformation Model modelType configuration (3)",
+      "materialization": "Transformation Model materialization configuration (3)",
+      "upstreamPipelineIds": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "upstreamModelIds": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "sqlOrPrepSpec": "Transformation Model sqlOrPrepSpec configuration (3)",
+      "qualityTestsJson": [
+        "item-3-a",
+        "item-3-b"
+      ],
+      "gitRepositoryId": "00000000-0098-0001-0000-000000000003",
+      "gitCommitSha": "Transformation Model gitCommitSha configuration (3)",
+      "targetWarehouseTableId": "00000000-0098-0001-0000-000000000003",
+      "lastRunStatus": "Transformation Model lastRunStatus configuration (3)",
+      "version": 3,
+      "status": "COMPLETED",
+      "isDeleted": false
+    }
+  ]
+}

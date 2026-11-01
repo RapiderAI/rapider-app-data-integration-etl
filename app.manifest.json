@@ -1,0 +1,3302 @@
+{
+  "name": "Rapider Data Integration / ETL",
+  "key": "data-integration-etl",
+  "domainKey": "DAT",
+  "appSuite": {
+    "key": "DAT",
+    "title": "Rapider Data & Analytics Suite"
+  },
+  "type": "App",
+  "description": "Data Integration / ETL enterprise microapplication in the Rapider Data & Analytics Suite.",
+  "isPublic": true,
+  "tags": [
+    "dat",
+    "data-integration-etl",
+    "top-200"
+  ],
+  "iconUrl": "fas fa-chart-bar",
+  "icon": "fas fa-chart-bar",
+  "route": "data-integration-etl",
+  "rating": 5,
+  "reviewCount": 0,
+  "status": "app-metadata-completed",
+  "coverPage": "<!-- Rapider Official App SOW & Specification | App #098: Data Integration / ETL (data-integration) | Domain: DAT -->\n\n# #098 Data Integration / ETL (`data-integration`) — Scope of Work (SOW)\n\n- **App Number & Slug:** `#098` / `098-data-integration-etl`\n- **Proposed Rapider App Key:** `data-integration`\n- **Suite / Domain Key:** `DAT` (Data, Analytics & Business Intelligence Suite — `Dat*` Canonical Prefix)\n- **Representative Product (`P1`):** Fivetran (+ dbt Transformation Layer)\n- **Combined Feature Catalog Reference:** [../combined-features/098-data-integration-etl-features.md](../combined-features/098-data-integration-etl-features.md)\n\n---\n\n## 1. Executive Outcome & Target Audience\n\n`data-integration` is the automated ELT, Change Data Capture (CDC), Data Cleansing, and Warehouse-Native Transformation backbone of the Rapider `DAT` suite. Data teams waste up to 60% of engineering capacity maintaining brittle cron scripts that break whenever an upstream SaaS vendor adds a column, an API rate-limits requests, or an OAuth token expires. `data-integration` replaces fragile scripts with resilient, checkpointed sync pipelines (`DatSyncPipeline`), automated schema drift policies (`DatSchemaDriftEvent`), in-flight PII hashing, visual cleansing + dbt-style SQL transformation DAGs (`DatTransformationModel`), and Reverse ETL activation back into Rapider operational suites.\n\n- **SME Fast-Path Defaults:** Business analysts and operations leads connect external SaaS apps, CSV/SFTP drops, or legacy databases in minutes using preflight-validated wizards and no-code visual cleansing recipes (date/currency normalization, deduplication) landing clean tables directly into `#099` (`data-warehouse`) and `#096` (`bi-dashboards`).\n- **Enterprise Progressive Disclosure:** Data platform engineers unlock sub-minute log-based CDC, SCD Type 2 temporal history tracking, declarative custom REST/GraphQL connector specs, modular SQL transformation DAGs synced with `#101` (`source-control`), Monthly Active Rows (MAR) budget guardrails, and downstream BI circuit breakers.\n- **Measurable Success Outcomes:**\n  - `>= 99.9%` pipeline reliability via resumable LSN/cursor checkpointing (`DatReplicationCheckpoint`) and jittered exponential retries.\n  - Zero unannounced pipeline breakages from safe upstream column additions via governed `DatSchemaDriftEvent` propagation rules.\n  - Zero plaintext credentials stored in application records (100% vault secret reference enforcement).\n- **Top 6 Global Benchmarks Synthesized:** `P1` Fivetran (+ dbt), `P2` Airbyte, `P3` Informatica IDMC, `P4` Microsoft Fabric Data Factory, `P5` Qlik Talend Cloud, and `P6` Zoho DataPrep.\n\n---\n\n## 2. In-Scope, Out-of-Scope & Suite Ownership Boundaries\n\n### In-Scope\n1. Vault-backed source connectors (`DatSourceConnection`) and destination landing targets (`DatDestinationTarget`) with non-destructive preflight diagnostics and custom declarative REST/GraphQL connector specs.\n2. Multi-mode replication pipelines (`DatSyncPipeline`: full refresh, incremental append/upsert, log-based CDC, SCD Type 2 history) with atomic stream checkpoints (`DatReplicationCheckpoint`) and in-flight salted PII column hashing.\n3. Automated schema drift detection and resolution workflows (`DatSchemaDriftEvent`) routed to Stewards via Home `WorkItem`s when breaking changes occur.\n4. No-code visual cleansing transforms and post-load dbt-style SQL transformation DAGs (`DatTransformationModel`) with inline quality assertions and dead-letter quarantine routing.\n5. Execution observability (`DatSyncRun`), freshness SLA monitors, MAR/cost spike circuit breakers, and Reverse ETL operational enrichment via canonical Rapider suite guarded commands.\n\n### Out-of-Scope\n1. Analytical SQL compute cluster provisioning, physical warehouse table storage management, and ad-hoc SQL worksheets — owned by `#099 Data Warehouse & Analytics Platform` (`data-warehouse`).\n2. Executive BI charts, semantic KPI scorecards, and report bursting — owned by `#096 Business Intelligence & Dashboards` (`bi-dashboards`).\n3. Enterprise business glossary stewardship and cross-system access request governance — owned by `#100 Data Governance & Catalog` (`data-governance`).\n4. General-purpose human approval BPM forms or customer webhook iPaaS UI workflows — owned by Rapider platform `requiredWorkflows` / BPM.\n\n### Cross-Suite Ownership & Integration Contract\n\n| Domain / App | Owns (Single Source of Truth) | Integration Contract with `data-integration` (`#098`) |\n| :--- | :--- | :--- |\n| **`data-integration` (`#098`)** | `DatSourceConnection`, `DatDestinationTarget`, `DatSyncPipeline`, `DatReplicationCheckpoint`, `DatSyncRun`, `DatSchemaDriftEvent`, `DatTransformationModel` | Orchestrates extraction, CDC, cleansing, warehouse transformation triggers, and emits technical lineage & freshness events. |\n| **`#099` Data Warehouse (`data-warehouse`)** | `DatDatabaseCatalog`, `DatWarehouseTable`, `DatComputeCluster` | `DatDestinationTarget` lands stag",
+  "scopeOfWork": "<!-- Rapider Official App SOW & Specification | App #098: Data Integration / ETL (data-integration) | Domain: DAT -->\n\n# #098 Data Integration / ETL (`data-integration`) — Scope of Work (SOW)\n\n- **App Number & Slug:** `#098` / `098-data-integration-etl`\n- **Proposed Rapider App Key:** `data-integration`\n- **Suite / Domain Key:** `DAT` (Data, Analytics & Business Intelligence Suite — `Dat*` Canonical Prefix)\n- **Representative Product (`P1`):** Fivetran (+ dbt Transformation Layer)\n- **Combined Feature Catalog Reference:** [../combined-features/098-data-integration-etl-features.md](../combined-features/098-data-integration-etl-features.md)\n\n---\n\n## 1. Executive Outcome & Target Audience\n\n`data-integration` is the automated ELT, Change Data Capture (CDC), Data Cleansing, and Warehouse-Native Transformation backbone of the Rapider `DAT` suite. Data teams waste up to 60% of engineering capacity maintaining brittle cron scripts that break whenever an upstream SaaS vendor adds a column, an API rate-limits requests, or an OAuth token expires. `data-integration` replaces fragile scripts with resilient, checkpointed sync pipelines (`DatSyncPipeline`), automated schema drift policies (`DatSchemaDriftEvent`), in-flight PII hashing, visual cleansing + dbt-style SQL transformation DAGs (`DatTransformationModel`), and Reverse ETL activation back into Rapider operational suites.\n\n- **SME Fast-Path Defaults:** Business analysts and operations leads connect external SaaS apps, CSV/SFTP drops, or legacy databases in minutes using preflight-validated wizards and no-code visual cleansing recipes (date/currency normalization, deduplication) landing clean tables directly into `#099` (`data-warehouse`) and `#096` (`bi-dashboards`).\n- **Enterprise Progressive Disclosure:** Data platform engineers unlock sub-minute log-based CDC, SCD Type 2 temporal history tracking, declarative custom REST/GraphQL connector specs, modular SQL transformation DAGs synced with `#101` (`source-control`), Monthly Active Rows (MAR) budget guardrails, and downstream BI circuit breakers.\n- **Measurable Success Outcomes:**\n  - `>= 99.9%` pipeline reliability via resumable LSN/cursor checkpointing (`DatReplicationCheckpoint`) and jittered exponential retries.\n  - Zero unannounced pipeline breakages from safe upstream column additions via governed `DatSchemaDriftEvent` propagation rules.\n  - Zero plaintext credentials stored in application records (100% vault secret reference enforcement).\n- **Top 6 Global Benchmarks Synthesized:** `P1` Fivetran (+ dbt), `P2` Airbyte, `P3` Informatica IDMC, `P4` Microsoft Fabric Data Factory, `P5` Qlik Talend Cloud, and `P6` Zoho DataPrep.\n\n---\n\n## 2. In-Scope, Out-of-Scope & Suite Ownership Boundaries\n\n### In-Scope\n1. Vault-backed source connectors (`DatSourceConnection`) and destination landing targets (`DatDestinationTarget`) with non-destructive preflight diagnostics and custom declarative REST/GraphQL connector specs.\n2. Multi-mode replication pipelines (`DatSyncPipeline`: full refresh, incremental append/upsert, log-based CDC, SCD Type 2 history) with atomic stream checkpoints (`DatReplicationCheckpoint`) and in-flight salted PII column hashing.\n3. Automated schema drift detection and resolution workflows (`DatSchemaDriftEvent`) routed to Stewards via Home `WorkItem`s when breaking changes occur.\n4. No-code visual cleansing transforms and post-load dbt-style SQL transformation DAGs (`DatTransformationModel`) with inline quality assertions and dead-letter quarantine routing.\n5. Execution observability (`DatSyncRun`), freshness SLA monitors, MAR/cost spike circuit breakers, and Reverse ETL operational enrichment via canonical Rapider suite guarded commands.\n\n### Out-of-Scope\n1. Analytical SQL compute cluster provisioning, physical warehouse table storage management, and ad-hoc SQL worksheets — owned by `#099 Data Warehouse & Analytics Platform` (`data-warehouse`).\n2. Executive BI charts, semantic KPI scorecards, and report bursting — owned by `#096 Business Intelligence & Dashboards` (`bi-dashboards`).\n3. Enterprise business glossary stewardship and cross-system access request governance — owned by `#100 Data Governance & Catalog` (`data-governance`).\n4. General-purpose human approval BPM forms or customer webhook iPaaS UI workflows — owned by Rapider platform `requiredWorkflows` / BPM.\n\n### Cross-Suite Ownership & Integration Contract\n\n| Domain / App | Owns (Single Source of Truth) | Integration Contract with `data-integration` (`#098`) |\n| :--- | :--- | :--- |\n| **`data-integration` (`#098`)** | `DatSourceConnection`, `DatDestinationTarget`, `DatSyncPipeline`, `DatReplicationCheckpoint`, `DatSyncRun`, `DatSchemaDriftEvent`, `DatTransformationModel` | Orchestrates extraction, CDC, cleansing, warehouse transformation triggers, and emits technical lineage & freshness events. |\n| **`#099` Data Warehouse (`data-warehouse`)** | `DatDatabaseCatalog`, `DatWarehouseTable`, `DatComputeCluster` | `DatDestinationTarget` lands staging/mart tables into `#099` `DatWarehouseTable` and executes pushdown `DatTransformationModel` SQL on `#099` compute. |\n| **`#100` Data Governance (`data-governance`)** | `DatLineageEdge`, `DatQualityIncident`, `DatClassificationTag` | Publishes column-level `DatLineageEdge` graphs after every DAG run and emits `DatQualityIncident` events when inline transformation tests quarantine rows. |\n| **`#096` BI Dashboards (`bi-dashboards`)** | `DatSemanticModel`, `DatReportSubscription` | Emits `dat.etl.mart.refreshed.v1` and freshness SLA breach signals to trigger `#096` snapshot refreshes or hold stale executive digests. |\n| **`#101` Source Control & `#102` CI/CD** | `DevRepository`, `DevPullRequest`, `DevPipelineRun` | Syncs SQL `DatTransformationModel` files with `#101` Git branches and validates PR dry-runs via `#102`. |\n| **Operational Suites (`CRM`, `FIN`, `OPS`, `HR`, `MKT`)** | Canonical domain entities (`CrmAccount`, `OpsSupplierProfile`, `FinInvoice`, etc.) | Reverse ETL (`ETL-005`) invokes target suite guarded commands (never raw collection bypass) to enrich operational records safely. |\n\n---\n\n## 3. Primary Web Pages & Sidebar Navigation Architecture (12 Pages)\n\nAll visible sidebar sections enforce **`>= 3` visible items (`displayOnMenu: true`)**, while detail views and sliding creation/edit drawers set `displayOnMenu: false`.\n\n| # | Route | Page Title | Sidebar Section | Menu Visible | Key Components & UX |\n| :--- | :--- | :--- | :--- | :--- | :--- |\n| 1 | `integration-hub` | Pipeline Health & SLA Hub | `Pipelines & Runs` | `true` (Order 1) | Freshness SLA compliance cards, 24h sync throughput chart, MAR budget gauge, active failure/drift `WorkItem` banner, `#activeFilterTagsBar`. |\n| 2 | `sync-pipelines` | Sync Pipelines | `Pipelines & Runs` | `true` (Order 2) | `findSWR` table of `DatSyncPipeline`s with sync mode pills (`CDC`, `INCREMENTAL`, `SCD2`), clickable pipeline name, `Sync Now` action, icon+text `Edit`, icon-only `Delete`. |\n| 3 | `sync-runs` | Sync Run Ledger | `Pipelines & Runs` | `true` (Order 3) | Execution history (`DatSyncRun`) filterable by `SUCCEEDED / FAILED / RUNNING / QUARANTINED`, rows synced, MAR delta, duration, and `#activeFilterTagsBar` + `Clear all`. |\n| 4 | `source-connections` | Source Connectors | `Connectivity` | `true` (Order 4) | Registry of `DatSourceConnection`s showing connector type, vault secret status, OAuth expiry countdown, and `\"Test Preflight\"` button. |\n| 5 | `destination-targets` | Destinations & Reverse ETL | `Connectivity` | `true` (Order 5) | Catalog of `DatDestinationTarget`s (`#099` warehouse catalogs, object staging, and Reverse ETL suite targets) with latency and write health. |\n| 6 | `custom-connector-studio` | Custom API Connector Studio | `Connectivity` | `true` (Order 6) | Declarative REST/GraphQL connector builder (`ETL-004`) with pagination, rate-limit policy, JSONPath tester, and AI OpenAPI spec importer. |\n| 7 | `transformation-models` | Transformations & Prep | `Transform & Governance` | `true` (Order 7) | Catalog of SQL & visual-prep `DatTransformationModel`s showing materialization (`VIEW / TABLE / INCREMENTAL`), quality test pass rate, and `#101` Git ref. |\n| 8 | `dag-lineage-explorer` | Pipeline DAG Visualizer | `Transform & Governance` | `true` (Order 8) | Interactive end-to-end graph (`Source -> Sync -> Staging -> Mart -> BI Model`) with freshness overlays and downstream impact highlighting. |\n| 9 | `schema-drift-center` | Schema Drift & Quarantine | `Transform & Governance` | `true` (Order 9) | `DatSchemaDriftEvent` queue and dead-letter quarantine inspector with column diff viewer and `Approve Propagation / Block Column / Hash PII` actions. |\n| 10 | `pipeline-detail` | Pipeline Stream & Checkpoint Detail | *(Hidden)* | `false` | Per-table stream selector (`#/pipeline-detail?id=...`), PII column hash toggles, `DatReplicationCheckpoint` LSN/cursor state, surgical table resync, and `Back to Pipelines`. |\n| 11 | `run-attempt-detail` | Sync Run Log & AI Diagnostics | *(Hidden)* | `false` | Structured attempt logs (`#/run-attempt-detail?id=...`), HTTP/CDC error inspector, `projectChannelMessage` incident thread, and AI Fix Assistant. |\n| 12 | `connector-pipeline-drawer` | Connector & Pipeline Drawer | *(Hidden)* | `false` | Sliding creation/edit drawer for `DatSourceConnection`, `DatSyncPipeline`, and `DatTransformationModel`; enforces `try/catch/finally` button reset and `closePageDrawer()`. |\n\n---\n\n## 4. Canonical Data Models (`Dat*` — 7 Models)\n\nAll models strictly omit `projectId`, store zero plaintext credentials, use platform UUID `id` + optimistic `version`, and use `Decimal128` for cost/MAR quota budgets.\n\n| Model Name | Key Fields & Types | Relationships & External Refs | Invariants & Lifecycle |\n| :--- | :--- | :--- | :--- |\n| **`DatSourceConnection`** | `id: UUID`, `code: string`, `name: string`, `connectorType: enum(POSTGRES, MYSQL, MSSQL, ORACLE, REST_API, GRAPHQL, S3_GCS, SFTP, SAAS_APP)`, `vaultSecretRef: string`, `customSpecJson: object?`, `preflightStatus: enum(UNTESTED, HEALTHY, DEGRADED, AUTH_EXPIRED)`, `oauthExpiresAt: datetime?`, `lastTestedAt: datetime?`, `ownerUserId: UUID`, `version: int` | Referenced by `DatSyncPipeline.sourceConnectionId`; `vaultSecretRef` resolves exclusively via Platform Secret Vault at worker runtime. | **Zero-secret invariant:** `customSpecJson` and all string fields are scanned on write to reject embedded passwords, bearer tokens, or connection URIs. |\n| **`DatDestinationTarget`** | `id: UUID`, `code: string`, `name: string`, `targetType: enum(RAPIDER_WAREHOUSE, OBJECT_STORAGE_ICEBERG, REVERSE_ETL_SUITE)`, `warehouseCatalogId: UUID?`, `targetSuiteKey: string?`, `vaultSecretRef: string?`, `defaultSchemaPrefix: string`, `status: enum(ACTIVE, PAUSED, ERROR)`, `version: int` | `warehouseCatalogId -> DatDatabaseCatalog.id` (`#099`). | Reverse ETL targets (`REVERSE_ETL_SUITE`) must declare a valid Rapider suite guarded command contract. |\n| **`DatSyncPipeline`** | `id: UUID`, `code: string`, `name: string`, `sourceConnectionId: UUID`, `destinationTargetId: UUID`, `syncMode: enum(FULL_REFRESH, INCREMENTAL_APPEND, INCREMENTAL_UPSERT, LOG_BASED_CDC)`, `historyModeScd2: boolean`, `streamsConfigJson: {streamName, enabled, primaryKeys, cursorField, hashedColumns, blockedColumns}[]`, `driftPolicy: enum(AUTO_PROPAGATE_NEW, SAFE_WIDENING_ONLY, QUARANTINE_AND_PAUSE)`, `scheduleCron: string`, `freshnessSlaMinutes: int`, `monthlyMarCap: Decimal128?`, `status: enum(ACTIVE, PAUSED, BLOCKED_BY_DRIFT, ERROR)`, `version: int` | `sourceConnectionId -> DatSourceConnection.id`; `destinationTargetId -> DatDestinationTarget.id`. | `INCREMENTAL_UPSERT` and `LOG_BASED_CDC` require non-empty `primaryKeys` per enabled stream. Concurrent execution on the same `DatSyncPipeline.id` is mutually excluded via distributed lease. |\n| **`DatReplicationCheckpoint`** | `id: UUID`, `pipelineId: UUID`, `streamName: string`, `cursorType: enum(WAL_LSN, BINLOG_POS, TIMESTAMP_WATERMARK, API_CURSOR_TOKEN)`, `checkpointStateJson: object`, `lastCommittedAt: datetime`, `rowsTotalSynced: int`, `version: int` | `pipelineId -> DatSyncPipeline.id`. | Checkpoints advance atomically only after target staging batch commit succeeds, guaranteeing at-least-once delivery with idempotent deduplication. |\n| **`DatSyncRun`** | `id: UUID`, `pipelineId: UUID`, `triggerType: enum(SCHEDULED, MANUAL, WEBHOOK, BACKFILL)`, `status: enum(QUEUED, RUNNING, SUCCEEDED, PARTIAL_QUARANTINE, FAILED, CANCELED)`, `startedAt: datetime`, `completedAt: datetime?`, `rowsExtracted: int`, `rowsUpserted: int`, `rowsQuarantined: int`, `marCounted: Decimal128`, `attemptNumber: int`, `errorCode: string?`, `errorSummary: string?`, `discussionChannelId: UUID?`, `activeWorkItemId: UUID?`, `idempotencyKey: string` | `pipelineId -> DatSyncPipeline.id`; `activeWorkItemId -> Platform WorkItem.id`; `discussionChannelId -> projectChannelMessage`. | Append-only historical run ledger once `status` enters terminal state (`SUCCEEDED`, `FAILED`, `CANCELED`). |\n| **`DatSchemaDriftEvent`** | `id: UUID`, `pipelineId: UUID`, `syncRunId: UUID`, `streamName: string`, `changeType: enum(COLUMN_ADDED, COLUMN_REMOVED, TYPE_CHANGED, PRIMARY_KEY_ALTERED)`, `diffPayloadJson: object`, `ContainsPotentialPii: boolean`, `resolutionStatus: enum(AUTO_APPLIED, PENDING_STEWARD, APPROVED, BLOCKED, HASHED)`, `resolvedByUserId: UUID?`, `activeWorkItemId: UUID?`, `version: int` | `pipelineId -> DatSyncPipeline.id`; `syncRunId -> DatSyncRun.id`; `activeWorkItemId -> Platform WorkItem.id`. | Any `TYPE_CHANGED` narrowing or `ContainsPotentialPii === true` column addition forces `PENDING_STEWARD` regardless of `AUTO_PROPAGATE_NEW` until reviewed. |\n| **`DatTransformationModel`** | `id: UUID`, `code: string`, `name: string`, `modelType: enum(SQL_DBT, VISUAL_PREP)`, `materialization: enum(VIEW, TABLE, INCREMENTAL)`, `upstreamPipelineIds: UUID[]`, `upstreamModelIds: UUID[]`, `sqlOrPrepSpec: string`, `qualityTestsJson: {type, column, config}[]`, `gitRepositoryId: UUID?`, `gitCommitSha: string?`, `targetWarehouseTableId: UUID?`, `lastRunStatus: enum(NEVER_RUN, PASSED, FAILED_QUALITY, ERROR)`, `version: int` | `upstreamPipelineIds -> DatSyncPipeline.id[]`; `targetWarehouseTableId -> DatWarehouseTable.id` (`#099`); `gitRepositoryId -> DevRepository.id` (`#101`). | Dependency graph across `upstreamModelIds` MUST be a strict DAG (cycle check enforced on save). |\n\n---\n\n## 5. Core End-to-End User Journeys (5 Journeys)\n\n1. **Journey 1 — Vault-Backed CDC Pipeline Creation & Preflight Verification:**\n   - A Data Engineer opens `source-connections`, clicks `\"New Source Connector\"` (`connector-pipeline-drawer`), selects `POSTGRES`, binds `vaultSecretRef: \"sec://prod-erp-pg-ro\"`, and clicks `\"Test Preflight\"`.\n   - Preflight confirms TLS 1.3, `wal_level = logical`, and replication slot health (`HEALTHY`).\n   - Creating a `LOG_BASED_CDC` `DatSyncPipeline` targeting `#099` `RAW_ERP`, the engineer enables `orders` and `customers`, checks `hashedColumns: ['tax_id', 'phone']`, saves (drawer closes via `closePageDrawer()`), and triggers an initial sync landing clean tables into `#099`.\n2. **Journey 2 — Upstream Schema Drift Quarantine & Steward Resolution via Home `WorkItem`:**\n   - Upstream ERP adds column `customer_ssn_last4` to `customers`. During `DatSyncRun`, the PII heuristic flags `ContainsPotentialPii: true`, pauses the `customers` stream (`PENDING_STEWARD`), creates a `DatSchemaDriftEvent`, and dispatches a Rapider Home `WorkItem`.\n   - Clicking from the Home `WorkItem` into `schema-drift-center`, the Data Steward selects `\"Propagate with Salted SHA-256 Hash\"`, updating `DatSyncPipeline.streamsConfigJson`, resolving the `WorkItem`, and automatically resuming the paused stream from its exact `DatReplicationCheckpoint`.\n3. **Journey 3 — Post-Load Transformation DAG, Quality Quarantine & Lineage Emission:**\n   - Immediately after `DatSyncPipeline` completes, `transformation-models` runs `mart_customer_orders` (`INCREMENTAL` SQL model) on `#099` compute.\n   - An inline `NOT_NULL(order_currency)` test catches 3 malformed rows, routes them to dead-letter quarantine (`PARTIAL_QUARANTINE`), emits `dat.governance.quality_incident.created.v1` to `#100`, publishes column-level `DatLineageEdge`s, and triggers `#096` `bi-dashboards` cache refresh for all valid rows.\n4. **Journey 4 — Click-Through Sync Run Diagnostics & State-Preserving Back Navigation:**\n   - On `sync-runs`, an On-Call Engineer filters by `Status: \"FAILED\"` (`#activeFilterTagsBar` displays `Status: \"FAILED\" ✕`) and clicks run identifier `RUN-2026-0891` to open `#/run-attempt-detail?id=...`.\n   - The AI Fix Assistant inside `projectChannelMessage` identifies `HTTP 401 OAuth Refresh Token Revoked` on `DatSourceConnection` and proposes rotating the vault secret reference; clicking `\"Back to Sync Runs\"` restores `sync-runs` with `Status: \"FAILED\"` preserved.\n5. **Journey 5 — Reverse ETL Enrichment Back to `CRM`:**\n   - A RevOps Analyst configures a `REVERSE_ETL_SUITE` `DatSyncPipeline` reading `#099` `mart_account_usage_30d` and mapping `active_seats` and `last_login_at` to canonical `CRM` `CrmAccount` enrichment via `crm.account.enrichTelemetry` guarded command with full idempotency and audit logging.\n\n---\n\n## 6. Consolidated Feature Priorities & Work Packages (`P0`, `P1`, `P2`)\n\n### `P0` Foundation Work Packages\n- **`WP-P0-1` Vault Connectors, Destinations & Preflight (`ETL-001`, `ETL-002`, `ETL-003`):** Build `source-connections`, `destination-targets`, and `connector-pipeline-drawer` with secret-vault binding and preflight health diagnostics (`Data Engineer`).\n- **`WP-P0-2` Multi-Mode Sync, CDC Checkpoints, SCD2 & PII Hashing (`ETL-007`, `ETL-008`, `ETL-009`, `ETL-010`, `ETL-011`):** Build `sync-pipelines`, `pipeline-detail`, and `schema-drift-center` supporting full/incremental/CDC modes, SCD2 history, salted hashing, and drift governance (`Data Engineer` / `Data Steward`).\n- **`WP-P0-3` Visual Prep & Post-Load SQL Transformations (`ETL-013`, `ETL-014`):** Build `transformation-models` with DAG cycle validation and SME no-code cleansing recipes (`Analytics Engineer` / `Analyst`).\n- **`WP-P0-4` Scheduling, Run Ledger & Failure `WorkItem`s (`ETL-019`, `ETL-020`, `ETL-021`):** Build `integration-hub`, `sync-runs`, and `run-attempt-detail` with cron/dependency scheduling, exponential retries, and failure escalation (`Data Engineer`).\n\n### `P1` Scale & Enterprise Governance Work Packages\n- **`WP-P1-1` Custom REST/GraphQL Builder, Reverse ETL & Backfills (`ETL-004`, `ETL-005`, `ETL-012`):** Build `custom-connector-studio`, Reverse ETL guarded command writers, and surgical table backfills (`Data Engineer` / `RevOps`).\n- **`WP-P1-2` Inline Quality Gates, DAG Visualizer & Git CI Integration (`ETL-015`, `ETL-016`, `ETL-017`):** Dead-letter row quarantine + `#100` incident emission, `dag-lineage-explorer`, and `#101`/`#102` PR dry-run validation (`Analytics Engineer`).\n- **`WP-P1-3` Freshness SLAs, MAR Caps, OAuth Warnings & Env Promotion (`ETL-022`, `ETL-023`, `ETL-024`, `ETL-025`):** Downstream `#096` BI stale circuit breakers, `Decimal128` MAR budget caps, 14-day OAuth expiry `WorkItem`s, and `DEV -> PROD` promotion (`Platform Admin`).\n\n### `P2` Adjacent & Grounded AI Work Packages\n- **`WP-P2-1` OpenAPI Connector Generator & Document Chunking (`ETL-006`, `ETL-018`):** AI OpenAPI spec parser in `custom-connector-studio` and unstructured Drive document chunking pipelines (`Data Engineer`).\n- **`WP-P2-2` AI Field Mapper, Failure Fix Assistant & Postmortem Threads (`ETL-026`, `ETL-027`, `ETL-028`):** Smart schema mapping recommendations, grounded log root-cause diagnostics, and `projectChannelMessage` incident threads (`Data Engineer` / `Analyst`).\n\n---\n\n## 7. Roles, Permissions & Field-Level Governance\n\n| Role | Permitted Actions | Restricted / Field-Level Boundaries |\n| :--- | :--- | :--- |\n| **`Pipeline Viewer`** | View `integration-hub`, `sync-pipelines`, `sync-runs`, and `dag-lineage-explorer` status and freshness SLAs. | Cannot trigger manual resyncs, inspect quarantined row payloads, or view `vaultSecretRef` bindings. |\n| **`Business Data Analyst`** | Build visual prep recipes (`VISUAL_PREP`) in `transformation-models`, view non-PII `schema-drift-center` diffs. | Cannot create production `LOG_BASED_CDC` sources, disable PII hashing, or alter `monthlyMarCap`. |\n| **`Analytics Engineer`** | Author/edit SQL & visual `DatTransformationModel`s, configure inline quality assertions, link `#101` Git repos, trigger model runs. | Cannot rotate `DatSourceConnection` vault secrets or override `ContainsPotentialPii` quarantine blocks. |\n| **`Data Engineer`** | Create/edit `DatSourceConnection`, `DatDestinationTarget`, `DatSyncPipeline`, `custom-connector-studio` specs; trigger surgical backfills and retries. | Cannot read raw secret values from Platform Vault (write/bind reference IDs only); cannot approve PII un-hashing without `Data Steward`. |\n| **`Data Steward / Integration Admin`** | Resolve `PENDING_STEWARD` `DatSchemaDriftEvent`s via Home `WorkItem`s, configure PII hashing/blocking rules, set workspace `monthlyMarCap` budgets. | All drift approvals and state resets require guarded command audit justification. |\n\n---\n\n## 8. Technical APIs, Guarded Commands, Events & `requiredWorkflows`\n\n### Guarded Commands\n1. `dat.etl.testSourcePreflight({ sourceConnectionId, idempotencyKey, correlationId })` — Runs read-only connectivity, TLS, and CDC log permission checks via isolated worker using `vaultSecretRef`.\n2. `dat.etl.triggerSyncRun({ pipelineId, triggerType, selectedStreams, backfillRange, idempotencyKey, correlationId })` — Acquires pipeline concurrency lease and enqueues an idempotent `DatSyncRun`.\n3. `dat.etl.commitStreamCheckpoint({ pipelineId, streamName, checkpointStateJson, expectedVersion, idempotencyKey, correlationId })` — Atomically advances `DatReplicationCheckpoint` after staging verification.\n4. `dat.etl.resolveSchemaDrift({ driftEventId, resolutionAction, expectedVersion, idempotencyKey, correlationId })` — Applies `APPROVED`, `BLOCKED`, or `HASHED` column policy, closes the Home `WorkItem`, and resumes paused streams.\n5. `dat.etl.executeTransformationDag({ rootModelIds, gitCommitSha, idempotencyKey, correlationId })` — Executes topological sort of `DatTransformationModel`s in `#099` and emits lineage + quality telemetry.\n\n### Domain Events Published & Consumed (Kafka)\n- **Published:** `dat.etl.sync_run.succeeded.v1`, `dat.etl.sync_run.failed.v1`, `dat.etl.schema_drift.detected.v1`, `dat.etl.mart.refreshed.v1`, `dat.etl.freshness_sla.breached.v1`, `dat.etl.lineage.emitted.v1`.\n- **Consumed:** `dev.scm.pull_request.opened.v1` (from `#101` for transformation SQL dry-run previews), `dat.governance.classification.updated.v1` (from `#100` to enforce upstream column hashing).\n\n### `requiredWorkflows`\n- `etlScheduledSyncOrchestratorWorkflow` — Cron/lease-guarded extraction, chunked staging load, checkpoint commit, and retry orchestration.\n- `etlPostLoadTransformDagWorkflow` — Chains `DatTransformationModel` execution immediately following upstream sync completion.\n- `etlSchemaDriftEscalationWorkflow` — Routes breaking or PII-flagged schema changes to Steward Home `WorkItem`s.\n- `etlOAuthExpiryMonitorWorkflow` — Daily check creating preventative Home `WorkItem`s 14 days before credential/certificate expiration.\n\n### Grounded Rapider AI Governance Rules\n- AI connector builders (`ETL-006`), field mappers (`ETL-026`), and failure assistants (`ETL-027`) NEVER receive raw vault secrets or unmasked PII rows in prompt context, and NEVER execute stream state resets, backfill overwrites, or schema drift approvals without explicit human confirmation.\n\n---\n\n## 9. Security, Privacy, Compliance & Non-Functional Requirements\n\n- **Strict Zero-Secret Persistence:** In compliance with Rapider repository security mandates, `DatSourceConnection` and `DatDestinationTarget` reject any payload containing inline passwords, API keys, JDBC passwords, or bearer tokens (`422 Validation Error`); workers resolve `vaultSecretRef` strictly in memory via environment/platform vault.\n- **In-Flight PII Protection (GDPR / HIPAA / SOC 2):** Columns configured in `hashedColumns` are hashed with workspace-specific KMS-managed salt before writing to disk or staging buckets; `blockedColumns` are dropped in memory at the extraction reader.\n- **Throughput, Idempotency & Precision:** Supports checkpointed multi-million-row incremental loads without memory exhaustion; `Decimal128` preserved across financial ERP extractions (e.g., `\\$10,450,000.99` ledger balances) and `monthlyMarCap` quotas; zero `projectId` fields on models.\n- **Accessibility & Responsive UX:** WCAG 2.2 AA accessible tabular DAG fallback alongside `dag-lineage-explorer`, `#ffffff !important` white text on primary/danger buttons, and responsive views across `390px`, `768px`, and `1440px`.\n\n---\n\n## 10. Deterministic Acceptance Criteria (14 Testable Criteria)\n\n1. **AC-01 (Sidebar Minimum-3 Rule):** Visible sidebar sections (`Pipelines & Runs`: 3 items, `Connectivity`: 3 items, `Transform & Governance`: 3 items) each contain `>= 3` `displayOnMenu: true` pages; `pipeline-detail`, `run-attempt-detail`, and `connector-pipeline-drawer` set `displayOnMenu: false`.\n2. **AC-02 (Zero-Secret Guardrail):** Submitting a `DatSourceConnection` or `DatDestinationTarget` containing a plaintext password, `Bearer ...` token, or credentialed URI (`postgres://user:pass@...`) is deterministically rejected with a `422` validation error; valid `vaultSecretRef` references save cleanly.\n3. **AC-03 (SWR Clean Queries & Defensive Filtering):** All 9 directory/hub routes fetch initial data via `findSWR`/`countSWR` with zero `isDeleted` where-clauses and apply in-memory `item.isDeleted !== true` filtering.\n4. **AC-04 (Table Actions & Click-Through Navigation):** Zero `\"View\"` buttons exist in `Actions` columns; clicking a pipeline name on `sync-pipelines` navigates to `#/pipeline-detail?id=...` and clicking a run ID on `sync-runs` navigates to `#/run-attempt-detail?id=...` without `<base href>` 404 traps; `Edit` uses icon+text and `Delete` uses an icon-only button with `#rapiderConfirmOkBtn` modal confirmation.\n5. **AC-05 (Active Filter Tags & Clear All):** Selecting `Status: \"FAILED\"` or typing a search term on `sync-runs` or `schema-drift-center` displays `#activeFilterTagsBar` with HTML-escaped dismissible chips and `[Clear all]`, synchronously updating rows and counters.\n6. **AC-06 (Drawer Lifecycle & `finally` Button Reset):** Creating or editing a connector or pipeline in `connector-pipeline-drawer` restores the save button state inside `finally`, invalidates SWR caches, updates parent tables optimistically, and closes the drawer via `closePageDrawer()`.\n7. **AC-07 (Pipeline Concurrency Lease & Idempotency):** Invoking `dat.etl.triggerSyncRun` while a `RUNNING` `DatSyncRun` already holds the lease on `pipelineId` queues or rejects duplicate overlap deterministically without corrupting `DatReplicationCheckpoint`.\n8. **AC-08 (Atomic Checkpoint Resume):** Simulating a mid-run network failure after chunk 3 of 5 leaves `DatReplicationCheckpoint` at chunk 3; the subsequent retry resumes from chunk 4 without duplicating or dropping rows.\n9. **AC-09 (PII Schema Drift Quarantine `WorkItem`):** When an upstream sync introduces a new column matching PII heuristics (`ssn`, `email`, `iban`), `DatSchemaDriftEvent` enters `PENDING_STEWARD`, pauses that stream, and creates a Rapider Home `WorkItem`.\n10. **AC-10 (Transformation DAG Cycle Rejection):** Saving a `DatTransformationModel` whose `upstreamModelIds` form a cycle (`A -> B -> A`) fails deterministic validation before persistence.\n11. **AC-11 (`Decimal128` MAR Cap & Financial Fidelity):** Currency columns cleansed via `DatTransformationModel` and `monthlyMarCap` comparisons preserve exact `Decimal128` precision.\n12. **AC-12 (Downstream BI Stale Circuit Breaker):** When a `DatSyncPipeline` exceeds `freshnessSlaMinutes`, `dat.etl.freshness_sla.breached.v1` is emitted so `#096` `bi-dashboards` flags dependent scorecards as stale.\n13. **AC-13 (Back Navigation Filter Preservation):** Navigating from `sync-runs` (filtered by `Status: \"FAILED\"`) into `run-attempt-detail` and clicking `#btnGoBack` restores `sync-runs` with `Status: \"FAILED\"` active.\n14. **AC-14 (Theme & Contrast Compliance):** All 12 pages pass light/dark `validate_theme` checks with `#ffffff !important` text on primary/destructive buttons and zero `window.alert`/`confirm`/`prompt` dialogs.\n",
+  "thumbnailUrl": "",
+  "isolationScope": "ENTERPRISE_SHARED",
+  "dataModels": [
+    {
+      "name": "CrmAccount",
+      "title": "Account",
+      "description": "Customer entity with credit limit, balance, and risk profile.",
+      "domainName": "Rapider CRM Suite",
+      "domainKey": "CRM",
+      "datatableName": "CrmAccount",
+      "dataTableName": "CrmAccount",
+      "sqlTableName": "crm_account",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ code }} - {{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "code"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "ledgerId",
+            "code",
+            "name",
+            "type"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "ledgerId"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 50,
+          "defaultContextLimit": 20,
+          "hiddenFields": [],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "phone",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "creditLimit",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "currentBalance",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "riskFlag",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "paymentTerms",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "accountOwner",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "taxId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "createdAt",
+          "type": "date",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "date",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "accountCode",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "accountType",
+          "type": "string",
+          "description": "Allowed values: PROSPECT, CUSTOMER, PARTNER, COMPETITOR, HOUSEHOLD",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "PROSPECT",
+            "CUSTOMER",
+            "PARTNER",
+            "COMPETITOR",
+            "HOUSEHOLD"
+          ],
+          "options": [
+            "PROSPECT",
+            "CUSTOMER",
+            "PARTNER",
+            "COMPETITOR",
+            "HOUSEHOLD"
+          ]
+        },
+        {
+          "name": "customerTier",
+          "type": "string",
+          "description": "Allowed values: ENTERPRISE, MID_MARKET, SMB, VIP",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "ENTERPRISE",
+            "MID_MARKET",
+            "SMB",
+            "VIP"
+          ],
+          "options": [
+            "ENTERPRISE",
+            "MID_MARKET",
+            "SMB",
+            "VIP"
+          ]
+        },
+        {
+          "name": "supportSlaTier",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryDomain",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "parentAccountId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "CrmAccount",
+          "referenceField": "id"
+        },
+        {
+          "name": "legalEntityId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "FinLegalEntity",
+          "referenceField": "id"
+        },
+        {
+          "name": "industry",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "revenue",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "website",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ownerPersonId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "ledger",
+          "type": "belongsTo",
+          "sourceModel": "CrmAccount",
+          "sourceField": "ledgerId",
+          "targetModel": "FinLedger",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "The ledger this account belongs to."
+        },
+        {
+          "name": "parentAccount",
+          "type": "belongsTo",
+          "sourceModel": "CrmAccount",
+          "sourceField": "parentAccountId",
+          "targetModel": "CrmAccount",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "CrmAccount parentAccount foreign key link to CrmAccount."
+        },
+        {
+          "name": "ownerEmployee",
+          "type": "belongsTo",
+          "sourceModel": "CrmAccount",
+          "sourceField": "ownerEmployeeId",
+          "targetModel": "HrEmployee",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "CrmAccount ownerEmployee foreign key link to HrEmployee."
+        },
+        {
+          "name": "territory",
+          "type": "belongsTo",
+          "sourceModel": "CrmAccount",
+          "sourceField": "territoryId",
+          "targetModel": "CrmTerritory",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "CrmAccount territory foreign key link to CrmTerritory."
+        },
+        {
+          "name": "defaultBillingProfile",
+          "type": "belongsTo",
+          "sourceModel": "CrmAccount",
+          "sourceField": "defaultBillingProfileId",
+          "targetModel": "FinBillingProfile",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "CrmAccount defaultBillingProfile foreign key link to FinBillingProfile."
+        }
+      ]
+    },
+    {
+      "name": "DatReportSubscription",
+      "title": "Report Subscription",
+      "description": "Snapshot rendering MUST evaluate `DatRowSecurityPolicy` per individual recipient (`recipientUserIds`) — never broadcast an unrestricted admin snapshot to restricted viewers.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatReportSubscription",
+      "dataTableName": "DatReportSubscription",
+      "sqlTableName": "dat_report_subscription",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Report Subscription, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "dashboardId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "scheduleCron",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "exportFormat",
+          "type": "string",
+          "description": "Allowed values: PDF, CSV_ZIP, DIGEST_LINK",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "PDF",
+            "CSV_ZIP",
+            "DIGEST_LINK"
+          ],
+          "options": [
+            "PDF",
+            "CSV_ZIP",
+            "DIGEST_LINK"
+          ]
+        },
+        {
+          "name": "recipientUserIds",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "presetFiltersJson",
+          "type": "object",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isEnabled",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "lastDeliveredAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "lastDeliveryFileId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "dashboard",
+          "type": "belongsTo",
+          "sourceModel": "DatReportSubscription",
+          "sourceField": "dashboardId",
+          "targetModel": "DatDashboard",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatReportSubscription dashboard foreign key link to DatDashboard."
+        }
+      ]
+    },
+    {
+      "name": "DatSemanticModel",
+      "title": "Semantic Model",
+      "description": "`code` unique per workspace. Every join must declare explicit cardinality (`ONE_TO_ONE`, `MANY_TO_ONE`) to block fan-out double counting. Transition to `CERTIFIED` requires Steward role via guarded command.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatSemanticModel",
+      "dataTableName": "DatSemanticModel",
+      "sqlTableName": "dat_semantic_model",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "code"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Semantic Model, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "sourceType",
+          "type": "string",
+          "description": "Allowed values: RAPIDER_SUITE, WAREHOUSE_TABLE, BLENDED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "RAPIDER_SUITE",
+            "WAREHOUSE_TABLE",
+            "BLENDED"
+          ],
+          "options": [
+            "RAPIDER_SUITE",
+            "WAREHOUSE_TABLE",
+            "BLENDED"
+          ]
+        },
+        {
+          "name": "entitiesJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "joinsJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "primaryGrain",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "executionMode",
+          "type": "string",
+          "description": "Allowed values: LIVE, CACHED_SNAPSHOT",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "LIVE",
+            "CACHED_SNAPSHOT"
+          ],
+          "options": [
+            "LIVE",
+            "CACHED_SNAPSHOT"
+          ]
+        },
+        {
+          "name": "refreshCron",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "lastRefreshedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "certificationStatus",
+          "type": "string",
+          "description": "Allowed values: DRAFT, PROMOTED, CERTIFIED, ARCHIVED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "DRAFT",
+            "PROMOTED",
+            "CERTIFIED",
+            "ARCHIVED"
+          ],
+          "options": [
+            "DRAFT",
+            "PROMOTED",
+            "CERTIFIED",
+            "ARCHIVED"
+          ]
+        },
+        {
+          "name": "certifiedByUserId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": []
+    },
+    {
+      "name": "FinInvoice",
+      "title": "Invoice",
+      "description": "Accounts Payable or Receivable invoice.",
+      "domainName": "Rapider Finance Suite",
+      "domainKey": "FIN",
+      "datatableName": "FinInvoice",
+      "dataTableName": "FinInvoice",
+      "sqlTableName": "fin_invoice",
+      "isolationScope": "ENTERPRISE_SHARED_GOVERNED",
+      "titleFieldTemplate": "{{ partnerName }} - {{ totalAmount }} {{ currency }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "partnerName"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "legalEntityId",
+            "type",
+            "partnerName",
+            "invoiceDate",
+            "totalAmount",
+            "currency"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "status"
+          ],
+          "additionalPrompt": "",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "legalEntityId",
+            "type"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": "",
+          "restrictedStates": [
+            {
+              "description": "Cannot modify paid invoices.",
+              "where": {}
+            }
+          ]
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 10,
+          "hiddenFields": [],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [
+            "payments"
+          ],
+          "restrictedStates": [
+            {
+              "description": "Cannot delete approved or paid invoices.",
+              "where": {}
+            }
+          ]
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "legalEntityId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "type",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "partnerName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "invoiceDate",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "dueDate",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "totalAmount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "currency",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "invoiceNumber",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "accountId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "CrmAccount",
+          "referenceField": "id"
+        },
+        {
+          "name": "billingProfileId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "FinBillingProfile",
+          "referenceField": "id"
+        },
+        {
+          "name": "subscriptionId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "FinSubscription",
+          "referenceField": "id"
+        },
+        {
+          "name": "customerOrderId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "OpsCustomerOrder",
+          "referenceField": "id"
+        },
+        {
+          "name": "issueDate",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "subtotalAmount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "taxAmount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "openAmount",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "currencyCode",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "disputeStatus",
+          "type": "string",
+          "description": "Allowed values: NONE, IN_DISPUTE, RESOLVED) (from accreceivable",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "NONE",
+            "IN_DISPUTE",
+            "RESOLVED) (from accreceivable"
+          ],
+          "options": [
+            "NONE",
+            "IN_DISPUTE",
+            "RESOLVED) (from accreceivable"
+          ]
+        },
+        {
+          "name": "eInvoiceClearanceStatus",
+          "type": "string",
+          "description": "Allowed values: NOT_REQUIRED, PENDING, CLEARED, REJECTED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "NOT_REQUIRED",
+            "PENDING",
+            "CLEARED",
+            "REJECTED"
+          ],
+          "options": [
+            "NOT_REQUIRED",
+            "PENDING",
+            "CLEARED",
+            "REJECTED"
+          ]
+        },
+        {
+          "name": "customerName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "createdAt",
+          "type": "date",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "date",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "legalEntity",
+          "type": "belongsTo",
+          "sourceModel": "FinInvoice",
+          "sourceField": "legalEntityId",
+          "targetModel": "FinLegalEntity",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "The legal entity this invoice belongs to."
+        },
+        {
+          "name": "payments",
+          "type": "hasMany",
+          "sourceModel": "FinInvoice",
+          "sourceField": "id",
+          "targetModel": "FinPayment",
+          "targetField": "invoiceId",
+          "throughModel": null,
+          "description": "Payments applied to this invoice."
+        },
+        {
+          "name": "account",
+          "type": "belongsTo",
+          "sourceModel": "FinInvoice",
+          "sourceField": "accountId",
+          "targetModel": "CrmAccount",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "FinInvoice account foreign key link to CrmAccount."
+        },
+        {
+          "name": "billingProfile",
+          "type": "belongsTo",
+          "sourceModel": "FinInvoice",
+          "sourceField": "billingProfileId",
+          "targetModel": "FinBillingProfile",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "FinInvoice billingProfile foreign key link to FinBillingProfile."
+        },
+        {
+          "name": "subscription",
+          "type": "belongsTo",
+          "sourceModel": "FinInvoice",
+          "sourceField": "subscriptionId",
+          "targetModel": "FinSubscription",
+          "targetField": "id?",
+          "throughModel": null,
+          "description": "FinInvoice subscription foreign key link to FinSubscription."
+        },
+        {
+          "name": "customerOrder",
+          "type": "belongsTo",
+          "sourceModel": "FinInvoice",
+          "sourceField": "customerOrderId",
+          "targetModel": "OpsCustomerOrder",
+          "targetField": "id?",
+          "throughModel": null,
+          "description": "FinInvoice customerOrder foreign key link to OpsCustomerOrder."
+        }
+      ]
+    },
+    {
+      "name": "OpsSupplierProfile",
+      "title": "Supplier",
+      "description": "Represents a vendor or supplier that provides goods or services.",
+      "domainName": "Rapider Operations Suite",
+      "domainKey": "OPS",
+      "datatableName": "OpsSupplierProfile",
+      "dataTableName": "OpsSupplierProfile",
+      "sqlTableName": "ops_supplier_profile",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "email",
+          "taxId"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "name"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "status"
+          ],
+          "additionalPrompt": "Ensure supplier name is formatted correctly.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "Check if a supplier with the same taxId already exists."
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "taxId"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "Verify payment terms are standard (e.g., Net 30, Net 60).",
+          "requireUserConfirmation": true,
+          "customValidationPrompt": "Ensure email format is valid if updated.",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [],
+          "maskedFields": [
+            "taxId"
+          ],
+          "additionalPrompt": "Highlight suppliers with missing payment terms."
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [
+            "bills"
+          ],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "taxId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "email",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "phone",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "paymentTerms",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "currency",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "defaultExpenseAccount",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "address",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "city",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "country",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "verificationState",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "remittanceEmail",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "phoneE164",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "defaultCurrencyCode",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "defaultExpenseGlAccountId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "referenceModel": "FinGlAccount",
+          "referenceField": "id"
+        },
+        {
+          "name": "is1099Eligible",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "supplierCode",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "legalName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "riskTier",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "categories",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "preferred",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "crmAccountId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "crmAccount",
+          "type": "belongsTo",
+          "sourceModel": "OpsSupplierProfile",
+          "sourceField": "crmAccountId",
+          "targetModel": "CrmAccount",
+          "targetField": "id?",
+          "throughModel": null,
+          "description": "OpsSupplierProfile crmAccount foreign key link to CrmAccount."
+        },
+        {
+          "name": "defaultExpenseGlAccount",
+          "type": "belongsTo",
+          "sourceModel": "OpsSupplierProfile",
+          "sourceField": "defaultExpenseGlAccountId",
+          "targetModel": "FinGlAccount",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "OpsSupplierProfile defaultExpenseGlAccount foreign key link to FinGlAccount."
+        }
+      ]
+    },
+    {
+      "name": "DatSourceConnection",
+      "title": "Source Connection",
+      "description": "**Zero-secret invariant:** `customSpecJson` and all string fields are scanned on write to reject embedded passwords, bearer tokens, or connection URIs.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatSourceConnection",
+      "dataTableName": "DatSourceConnection",
+      "sqlTableName": "dat_source_connection",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "code"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Source Connection, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "connectorType",
+          "type": "string",
+          "description": "Allowed values: POSTGRES, MYSQL, MSSQL, ORACLE, REST_API, GRAPHQL, S3_GCS, SFTP, SAAS_APP",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "POSTGRES",
+            "MYSQL",
+            "MSSQL",
+            "ORACLE",
+            "REST_API",
+            "GRAPHQL",
+            "S3_GCS",
+            "SFTP",
+            "SAAS_APP"
+          ],
+          "options": [
+            "POSTGRES",
+            "MYSQL",
+            "MSSQL",
+            "ORACLE",
+            "REST_API",
+            "GRAPHQL",
+            "S3_GCS",
+            "SFTP",
+            "SAAS_APP"
+          ]
+        },
+        {
+          "name": "vaultSecretRef",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "customSpecJson",
+          "type": "object",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "preflightStatus",
+          "type": "string",
+          "description": "Allowed values: UNTESTED, HEALTHY, DEGRADED, AUTH_EXPIRED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "UNTESTED",
+            "HEALTHY",
+            "DEGRADED",
+            "AUTH_EXPIRED"
+          ],
+          "options": [
+            "UNTESTED",
+            "HEALTHY",
+            "DEGRADED",
+            "AUTH_EXPIRED"
+          ]
+        },
+        {
+          "name": "oauthExpiresAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "lastTestedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ownerUserId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": []
+    },
+    {
+      "name": "DatDestinationTarget",
+      "title": "Destination Target",
+      "description": "Reverse ETL targets (`REVERSE_ETL_SUITE`) must declare a valid Rapider suite guarded command contract.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatDestinationTarget",
+      "dataTableName": "DatDestinationTarget",
+      "sqlTableName": "dat_destination_target",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "code"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Destination Target, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "targetType",
+          "type": "string",
+          "description": "Allowed values: RAPIDER_WAREHOUSE, OBJECT_STORAGE_ICEBERG, REVERSE_ETL_SUITE",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "RAPIDER_WAREHOUSE",
+            "OBJECT_STORAGE_ICEBERG",
+            "REVERSE_ETL_SUITE"
+          ],
+          "options": [
+            "RAPIDER_WAREHOUSE",
+            "OBJECT_STORAGE_ICEBERG",
+            "REVERSE_ETL_SUITE"
+          ]
+        },
+        {
+          "name": "warehouseCatalogId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "targetSuiteKey",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "vaultSecretRef",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "defaultSchemaPrefix",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Allowed values: ACTIVE, PAUSED, ERROR",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "ACTIVE",
+            "PAUSED",
+            "ERROR"
+          ],
+          "options": [
+            "ACTIVE",
+            "PAUSED",
+            "ERROR"
+          ]
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "warehouseCatalog",
+          "type": "belongsTo",
+          "sourceModel": "DatDestinationTarget",
+          "sourceField": "warehouseCatalogId",
+          "targetModel": "DatDatabaseCatalog",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatDestinationTarget warehouseCatalog foreign key link to DatDatabaseCatalog."
+        }
+      ]
+    },
+    {
+      "name": "DatSyncPipeline",
+      "title": "Sync Pipeline",
+      "description": "`INCREMENTAL_UPSERT` and `LOG_BASED_CDC` require non-empty `primaryKeys` per enabled stream. Concurrent execution on the same `DatSyncPipeline.id` is mutually excluded via distributed lease.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatSyncPipeline",
+      "dataTableName": "DatSyncPipeline",
+      "sqlTableName": "dat_sync_pipeline",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "code"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Sync Pipeline, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "sourceConnectionId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "destinationTargetId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "syncMode",
+          "type": "string",
+          "description": "Allowed values: FULL_REFRESH, INCREMENTAL_APPEND, INCREMENTAL_UPSERT, LOG_BASED_CDC",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "FULL_REFRESH",
+            "INCREMENTAL_APPEND",
+            "INCREMENTAL_UPSERT",
+            "LOG_BASED_CDC"
+          ],
+          "options": [
+            "FULL_REFRESH",
+            "INCREMENTAL_APPEND",
+            "INCREMENTAL_UPSERT",
+            "LOG_BASED_CDC"
+          ]
+        },
+        {
+          "name": "historyModeScd2",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "streamsConfigJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "driftPolicy",
+          "type": "string",
+          "description": "Allowed values: AUTO_PROPAGATE_NEW, SAFE_WIDENING_ONLY, QUARANTINE_AND_PAUSE",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "AUTO_PROPAGATE_NEW",
+            "SAFE_WIDENING_ONLY",
+            "QUARANTINE_AND_PAUSE"
+          ],
+          "options": [
+            "AUTO_PROPAGATE_NEW",
+            "SAFE_WIDENING_ONLY",
+            "QUARANTINE_AND_PAUSE"
+          ]
+        },
+        {
+          "name": "scheduleCron",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "freshnessSlaMinutes",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "monthlyMarCap",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Allowed values: ACTIVE, PAUSED, BLOCKED_BY_DRIFT, ERROR",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "ACTIVE",
+            "PAUSED",
+            "BLOCKED_BY_DRIFT",
+            "ERROR"
+          ],
+          "options": [
+            "ACTIVE",
+            "PAUSED",
+            "BLOCKED_BY_DRIFT",
+            "ERROR"
+          ]
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "sourceConnection",
+          "type": "belongsTo",
+          "sourceModel": "DatSyncPipeline",
+          "sourceField": "sourceConnectionId",
+          "targetModel": "DatSourceConnection",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatSyncPipeline sourceConnection foreign key link to DatSourceConnection."
+        }
+      ]
+    },
+    {
+      "name": "DatReplicationCheckpoint",
+      "title": "Replication Checkpoint",
+      "description": "Checkpoints advance atomically only after target staging batch commit succeeds, guaranteeing at-least-once delivery with idempotent deduplication.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatReplicationCheckpoint",
+      "dataTableName": "DatReplicationCheckpoint",
+      "sqlTableName": "dat_replication_checkpoint",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ id }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "id"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Replication Checkpoint, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "pipelineId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "streamName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "cursorType",
+          "type": "string",
+          "description": "Allowed values: WAL_LSN, BINLOG_POS, TIMESTAMP_WATERMARK, API_CURSOR_TOKEN",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "WAL_LSN",
+            "BINLOG_POS",
+            "TIMESTAMP_WATERMARK",
+            "API_CURSOR_TOKEN"
+          ],
+          "options": [
+            "WAL_LSN",
+            "BINLOG_POS",
+            "TIMESTAMP_WATERMARK",
+            "API_CURSOR_TOKEN"
+          ]
+        },
+        {
+          "name": "checkpointStateJson",
+          "type": "object",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "lastCommittedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "rowsTotalSynced",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "pipeline",
+          "type": "belongsTo",
+          "sourceModel": "DatReplicationCheckpoint",
+          "sourceField": "pipelineId",
+          "targetModel": "DatSyncPipeline",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatReplicationCheckpoint pipeline foreign key link to DatSyncPipeline."
+        }
+      ]
+    },
+    {
+      "name": "DatSyncRun",
+      "title": "Sync Run",
+      "description": "Append-only historical run ledger once `status` enters terminal state (`SUCCEEDED`, `FAILED`, `CANCELED`).",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatSyncRun",
+      "dataTableName": "DatSyncRun",
+      "sqlTableName": "dat_sync_run",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ id }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "id"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Sync Run, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "pipelineId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "triggerType",
+          "type": "string",
+          "description": "Allowed values: SCHEDULED, MANUAL, WEBHOOK, BACKFILL",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "SCHEDULED",
+            "MANUAL",
+            "WEBHOOK",
+            "BACKFILL"
+          ],
+          "options": [
+            "SCHEDULED",
+            "MANUAL",
+            "WEBHOOK",
+            "BACKFILL"
+          ]
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Allowed values: QUEUED, RUNNING, SUCCEEDED, PARTIAL_QUARANTINE, FAILED, CANCELED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "QUEUED",
+            "RUNNING",
+            "SUCCEEDED",
+            "PARTIAL_QUARANTINE",
+            "FAILED",
+            "CANCELED"
+          ],
+          "options": [
+            "QUEUED",
+            "RUNNING",
+            "SUCCEEDED",
+            "PARTIAL_QUARANTINE",
+            "FAILED",
+            "CANCELED"
+          ]
+        },
+        {
+          "name": "startedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "completedAt",
+          "type": "datetime",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "rowsExtracted",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "rowsUpserted",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "rowsQuarantined",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "marCounted",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "attemptNumber",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "errorCode",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "errorSummary",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "discussionChannelId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "activeWorkItemId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "idempotencyKey",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "pipeline",
+          "type": "belongsTo",
+          "sourceModel": "DatSyncRun",
+          "sourceField": "pipelineId",
+          "targetModel": "DatSyncPipeline",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatSyncRun pipeline foreign key link to DatSyncPipeline."
+        }
+      ]
+    },
+    {
+      "name": "DatSchemaDriftEvent",
+      "title": "Schema Drift Event",
+      "description": "Any `TYPE_CHANGED` narrowing or `ContainsPotentialPii === true` column addition forces `PENDING_STEWARD` regardless of `AUTO_PROPAGATE_NEW` until reviewed.",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatSchemaDriftEvent",
+      "dataTableName": "DatSchemaDriftEvent",
+      "sqlTableName": "dat_schema_drift_event",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ id }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "id"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Schema Drift Event, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "pipelineId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "syncRunId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "streamName",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "changeType",
+          "type": "string",
+          "description": "Allowed values: COLUMN_ADDED, COLUMN_REMOVED, TYPE_CHANGED, PRIMARY_KEY_ALTERED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "COLUMN_ADDED",
+            "COLUMN_REMOVED",
+            "TYPE_CHANGED",
+            "PRIMARY_KEY_ALTERED"
+          ],
+          "options": [
+            "COLUMN_ADDED",
+            "COLUMN_REMOVED",
+            "TYPE_CHANGED",
+            "PRIMARY_KEY_ALTERED"
+          ]
+        },
+        {
+          "name": "diffPayloadJson",
+          "type": "object",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ContainsPotentialPii",
+          "type": "boolean",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        },
+        {
+          "name": "resolutionStatus",
+          "type": "string",
+          "description": "Allowed values: AUTO_APPLIED, PENDING_STEWARD, APPROVED, BLOCKED, HASHED",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "AUTO_APPLIED",
+            "PENDING_STEWARD",
+            "APPROVED",
+            "BLOCKED",
+            "HASHED"
+          ],
+          "options": [
+            "AUTO_APPLIED",
+            "PENDING_STEWARD",
+            "APPROVED",
+            "BLOCKED",
+            "HASHED"
+          ]
+        },
+        {
+          "name": "resolvedByUserId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "activeWorkItemId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "pipeline",
+          "type": "belongsTo",
+          "sourceModel": "DatSchemaDriftEvent",
+          "sourceField": "pipelineId",
+          "targetModel": "DatSyncPipeline",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatSchemaDriftEvent pipeline foreign key link to DatSyncPipeline."
+        }
+      ]
+    },
+    {
+      "name": "DatTransformationModel",
+      "title": "Transformation Model",
+      "description": "Dependency graph across `upstreamModelIds` MUST be a strict DAG (cycle check enforced on save).",
+      "domainName": "Rapider Data & Analytics Suite",
+      "domainKey": "DAT",
+      "datatableName": "DatTransformationModel",
+      "dataTableName": "DatTransformationModel",
+      "sqlTableName": "dat_transformation_model",
+      "isolationScope": "ENTERPRISE_SHARED",
+      "titleFieldTemplate": "{{ name }}",
+      "scope": {
+        "where": {}
+      },
+      "aiAgentConfig": {
+        "vectorSearchFields": [
+          "name",
+          "code"
+        ],
+        "planning": {
+          "availableOperations": [
+            "create",
+            "update",
+            "read",
+            "delete"
+          ]
+        },
+        "entityItemCreate": {
+          "requiredFields": [
+            "id"
+          ],
+          "immutableFields": [
+            "isDeleted"
+          ],
+          "requiredRelations": [],
+          "autoGenerateFields": [
+            "id"
+          ],
+          "additionalPrompt": "When creating Transformation Model, ensure required attributes are populated.",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": ""
+        },
+        "entityItemUpdate": {
+          "immutableFields": [
+            "id"
+          ],
+          "autoGenerateFields": [],
+          "additionalPrompt": "",
+          "requireUserConfirmation": false,
+          "customValidationPrompt": "",
+          "restrictedStates": []
+        },
+        "entityRead": {
+          "defaultPageSize": 20,
+          "defaultContextLimit": 30,
+          "hiddenFields": [
+            "isDeleted"
+          ],
+          "maskedFields": [],
+          "additionalPrompt": ""
+        },
+        "entityItemDelete": {
+          "requireCaptchaConfirmation": true,
+          "cascadingRelations": [],
+          "restrictedStates": []
+        }
+      },
+      "fields": [
+        {
+          "name": "id",
+          "type": "string",
+          "description": "Primary key UUID.",
+          "isPrimaryKey": true,
+          "isRequired": true,
+          "isHidden": false,
+          "isArray": false,
+          "defaultFn": "uuidv4"
+        },
+        {
+          "name": "code",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "modelType",
+          "type": "string",
+          "description": "Allowed values: SQL_DBT, VISUAL_PREP",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "SQL_DBT",
+            "VISUAL_PREP"
+          ],
+          "options": [
+            "SQL_DBT",
+            "VISUAL_PREP"
+          ]
+        },
+        {
+          "name": "materialization",
+          "type": "string",
+          "description": "Allowed values: VIEW, TABLE, INCREMENTAL",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "VIEW",
+            "TABLE",
+            "INCREMENTAL"
+          ],
+          "options": [
+            "VIEW",
+            "TABLE",
+            "INCREMENTAL"
+          ]
+        },
+        {
+          "name": "upstreamPipelineIds",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "upstreamModelIds",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "sqlOrPrepSpec",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "qualityTestsJson",
+          "type": "array",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": true
+        },
+        {
+          "name": "gitRepositoryId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "gitCommitSha",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "targetWarehouseTableId",
+          "type": "string",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "lastRunStatus",
+          "type": "string",
+          "description": "Allowed values: NEVER_RUN, PASSED, FAILED_QUALITY, ERROR",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "enumValues": [
+            "NEVER_RUN",
+            "PASSED",
+            "FAILED_QUALITY",
+            "ERROR"
+          ],
+          "options": [
+            "NEVER_RUN",
+            "PASSED",
+            "FAILED_QUALITY",
+            "ERROR"
+          ]
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "status",
+          "type": "string",
+          "description": "Lifecycle or record status.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "isDeleted",
+          "type": "boolean",
+          "description": "Soft deletion flag.",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false,
+          "default": false
+        }
+      ],
+      "relations": [
+        {
+          "name": "upstreamPipelineIds",
+          "type": "belongsTo",
+          "sourceModel": "DatTransformationModel",
+          "sourceField": "upstreamPipelineIds",
+          "targetModel": "DatSyncPipeline",
+          "targetField": "id",
+          "throughModel": null,
+          "description": "DatTransformationModel upstreamPipelineIds foreign key link to DatSyncPipeline."
+        }
+      ]
+    }
+  ],
+  "webPages": [
+    {
+      "name": "Pipeline Health & SLA Hub",
+      "route": "integration-hub",
+      "htmlFilePath": "pages/integration-hub/integration-hub.html",
+      "title": "Pipeline Health & SLA Hub",
+      "group": "Pipelines & Runs",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 1,
+      "developmentDetails": "Freshness SLA compliance cards, 24h sync throughput chart, MAR budget gauge, active failure/drift WorkItem banner, #activeFilterTagsBar."
+    },
+    {
+      "name": "Sync Pipelines",
+      "route": "sync-pipelines",
+      "htmlFilePath": "pages/sync-pipelines/sync-pipelines.html",
+      "title": "Sync Pipelines",
+      "group": "Pipelines & Runs",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 2,
+      "developmentDetails": "findSWR table of DatSyncPipelines with sync mode pills (CDC, INCREMENTAL, SCD2), clickable pipeline name, Sync Now action, icon+text Edit, icon-only Delete."
+    },
+    {
+      "name": "Sync Run Ledger",
+      "route": "sync-runs",
+      "htmlFilePath": "pages/sync-runs/sync-runs.html",
+      "title": "Sync Run Ledger",
+      "group": "Pipelines & Runs",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 3,
+      "developmentDetails": "Execution history (DatSyncRun) filterable by SUCCEEDED / FAILED / RUNNING / QUARANTINED, rows synced, MAR delta, duration, and #activeFilterTagsBar + Clear all."
+    },
+    {
+      "name": "Source Connectors",
+      "route": "source-connections",
+      "htmlFilePath": "pages/source-connections/source-connections.html",
+      "title": "Source Connectors",
+      "group": "Connectivity",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 4,
+      "developmentDetails": "Registry of DatSourceConnections showing connector type, vault secret status, OAuth expiry countdown, and \"Test Preflight\" button."
+    },
+    {
+      "name": "Destinations & Reverse ETL",
+      "route": "destination-targets",
+      "htmlFilePath": "pages/destination-targets/destination-targets.html",
+      "title": "Destinations & Reverse ETL",
+      "group": "Connectivity",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 5,
+      "developmentDetails": "Catalog of DatDestinationTargets (#099 warehouse catalogs, object staging, and Reverse ETL suite targets) with latency and write health."
+    },
+    {
+      "name": "Custom API Connector Studio",
+      "route": "custom-connector-studio",
+      "htmlFilePath": "pages/custom-connector-studio/custom-connector-studio.html",
+      "title": "Custom API Connector Studio",
+      "group": "Connectivity",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 6,
+      "developmentDetails": "Declarative REST/GraphQL connector builder (ETL-004) with pagination, rate-limit policy, JSONPath tester, and AI OpenAPI spec importer."
+    },
+    {
+      "name": "Transformations & Prep",
+      "route": "transformation-models",
+      "htmlFilePath": "pages/transformation-models/transformation-models.html",
+      "title": "Transformations & Prep",
+      "group": "Transform & Governance",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 7,
+      "developmentDetails": "Catalog of SQL & visual-prep DatTransformationModels showing materialization (VIEW / TABLE / INCREMENTAL), quality test pass rate, and #101 Git ref."
+    },
+    {
+      "name": "Pipeline DAG Visualizer",
+      "route": "dag-lineage-explorer",
+      "htmlFilePath": "pages/dag-lineage-explorer/dag-lineage-explorer.html",
+      "title": "Pipeline DAG Visualizer",
+      "group": "Transform & Governance",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 8,
+      "developmentDetails": "Interactive end-to-end graph (Source -> Sync -> Staging -> Mart -> BI Model) with freshness overlays and downstream impact highlighting."
+    },
+    {
+      "name": "Schema Drift & Quarantine",
+      "route": "schema-drift-center",
+      "htmlFilePath": "pages/schema-drift-center/schema-drift-center.html",
+      "title": "Schema Drift & Quarantine",
+      "group": "Transform & Governance",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 9,
+      "developmentDetails": "DatSchemaDriftEvent queue and dead-letter quarantine inspector with column diff viewer and Approve Propagation / Block Column / Hash PII actions."
+    },
+    {
+      "name": "Pipeline Stream & Checkpoint Detail",
+      "route": "pipeline-detail",
+      "htmlFilePath": "pages/pipeline-detail/pipeline-detail.html",
+      "title": "Pipeline Stream & Checkpoint Detail",
+      "group": "(Hidden)",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": false,
+      "order": 10,
+      "developmentDetails": "Per-table stream selector (#/pipeline-detail?id=...), PII column hash toggles, DatReplicationCheckpoint LSN/cursor state, surgical table resync, and Back to Pipelines."
+    },
+    {
+      "name": "Sync Run Log & AI Diagnostics",
+      "route": "run-attempt-detail",
+      "htmlFilePath": "pages/run-attempt-detail/run-attempt-detail.html",
+      "title": "Sync Run Log & AI Diagnostics",
+      "group": "(Hidden)",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": false,
+      "order": 11,
+      "developmentDetails": "Structured attempt logs (#/run-attempt-detail?id=...), HTTP/CDC error inspector, projectChannelMessage incident thread, and AI Fix Assistant."
+    },
+    {
+      "name": "Connector & Pipeline Drawer",
+      "route": "connector-pipeline-drawer",
+      "htmlFilePath": "pages/connector-pipeline-drawer/connector-pipeline-drawer.html",
+      "title": "Connector & Pipeline Drawer",
+      "group": "(Hidden)",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": false,
+      "order": 12,
+      "developmentDetails": "Sliding creation/edit drawer for DatSourceConnection, DatSyncPipeline, and DatTransformationModel; enforces try/catch/finally button reset and closePageDrawer()."
+    }
+  ],
+  "workflows": [],
+  "variables": [],
+  "tools": [],
+  "pages": [
+    {
+      "name": "Pipeline Health & SLA Hub",
+      "route": "integration-hub",
+      "htmlFilePath": "pages/integration-hub/integration-hub.html",
+      "title": "Pipeline Health & SLA Hub",
+      "group": "Pipelines & Runs",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 1,
+      "developmentDetails": "Freshness SLA compliance cards, 24h sync throughput chart, MAR budget gauge, active failure/drift WorkItem banner, #activeFilterTagsBar."
+    },
+    {
+      "name": "Sync Pipelines",
+      "route": "sync-pipelines",
+      "htmlFilePath": "pages/sync-pipelines/sync-pipelines.html",
+      "title": "Sync Pipelines",
+      "group": "Pipelines & Runs",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 2,
+      "developmentDetails": "findSWR table of DatSyncPipelines with sync mode pills (CDC, INCREMENTAL, SCD2), clickable pipeline name, Sync Now action, icon+text Edit, icon-only Delete."
+    },
+    {
+      "name": "Sync Run Ledger",
+      "route": "sync-runs",
+      "htmlFilePath": "pages/sync-runs/sync-runs.html",
+      "title": "Sync Run Ledger",
+      "group": "Pipelines & Runs",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 3,
+      "developmentDetails": "Execution history (DatSyncRun) filterable by SUCCEEDED / FAILED / RUNNING / QUARANTINED, rows synced, MAR delta, duration, and #activeFilterTagsBar + Clear all."
+    },
+    {
+      "name": "Source Connectors",
+      "route": "source-connections",
+      "htmlFilePath": "pages/source-connections/source-connections.html",
+      "title": "Source Connectors",
+      "group": "Connectivity",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 4,
+      "developmentDetails": "Registry of DatSourceConnections showing connector type, vault secret status, OAuth expiry countdown, and \"Test Preflight\" button."
+    },
+    {
+      "name": "Destinations & Reverse ETL",
+      "route": "destination-targets",
+      "htmlFilePath": "pages/destination-targets/destination-targets.html",
+      "title": "Destinations & Reverse ETL",
+      "group": "Connectivity",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 5,
+      "developmentDetails": "Catalog of DatDestinationTargets (#099 warehouse catalogs, object staging, and Reverse ETL suite targets) with latency and write health."
+    },
+    {
+      "name": "Custom API Connector Studio",
+      "route": "custom-connector-studio",
+      "htmlFilePath": "pages/custom-connector-studio/custom-connector-studio.html",
+      "title": "Custom API Connector Studio",
+      "group": "Connectivity",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 6,
+      "developmentDetails": "Declarative REST/GraphQL connector builder (ETL-004) with pagination, rate-limit policy, JSONPath tester, and AI OpenAPI spec importer."
+    },
+    {
+      "name": "Transformations & Prep",
+      "route": "transformation-models",
+      "htmlFilePath": "pages/transformation-models/transformation-models.html",
+      "title": "Transformations & Prep",
+      "group": "Transform & Governance",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 7,
+      "developmentDetails": "Catalog of SQL & visual-prep DatTransformationModels showing materialization (VIEW / TABLE / INCREMENTAL), quality test pass rate, and #101 Git ref."
+    },
+    {
+      "name": "Pipeline DAG Visualizer",
+      "route": "dag-lineage-explorer",
+      "htmlFilePath": "pages/dag-lineage-explorer/dag-lineage-explorer.html",
+      "title": "Pipeline DAG Visualizer",
+      "group": "Transform & Governance",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 8,
+      "developmentDetails": "Interactive end-to-end graph (Source -> Sync -> Staging -> Mart -> BI Model) with freshness overlays and downstream impact highlighting."
+    },
+    {
+      "name": "Schema Drift & Quarantine",
+      "route": "schema-drift-center",
+      "htmlFilePath": "pages/schema-drift-center/schema-drift-center.html",
+      "title": "Schema Drift & Quarantine",
+      "group": "Transform & Governance",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": true,
+      "order": 9,
+      "developmentDetails": "DatSchemaDriftEvent queue and dead-letter quarantine inspector with column diff viewer and Approve Propagation / Block Column / Hash PII actions."
+    },
+    {
+      "name": "Pipeline Stream & Checkpoint Detail",
+      "route": "pipeline-detail",
+      "htmlFilePath": "pages/pipeline-detail/pipeline-detail.html",
+      "title": "Pipeline Stream & Checkpoint Detail",
+      "group": "(Hidden)",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": false,
+      "order": 10,
+      "developmentDetails": "Per-table stream selector (#/pipeline-detail?id=...), PII column hash toggles, DatReplicationCheckpoint LSN/cursor state, surgical table resync, and Back to Pipelines."
+    },
+    {
+      "name": "Sync Run Log & AI Diagnostics",
+      "route": "run-attempt-detail",
+      "htmlFilePath": "pages/run-attempt-detail/run-attempt-detail.html",
+      "title": "Sync Run Log & AI Diagnostics",
+      "group": "(Hidden)",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": false,
+      "order": 11,
+      "developmentDetails": "Structured attempt logs (#/run-attempt-detail?id=...), HTTP/CDC error inspector, projectChannelMessage incident thread, and AI Fix Assistant."
+    },
+    {
+      "name": "Connector & Pipeline Drawer",
+      "route": "connector-pipeline-drawer",
+      "htmlFilePath": "pages/connector-pipeline-drawer/connector-pipeline-drawer.html",
+      "title": "Connector & Pipeline Drawer",
+      "group": "(Hidden)",
+      "icon": "fas fa-chart-bar",
+      "displayInMenu": false,
+      "order": 12,
+      "developmentDetails": "Sliding creation/edit drawer for DatSourceConnection, DatSyncPipeline, and DatTransformationModel; enforces try/catch/finally button reset and closePageDrawer()."
+    }
+  ]
+}
