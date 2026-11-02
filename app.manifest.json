@@ -1708,6 +1708,134 @@
           "isHidden": false,
           "isArray": false,
           "default": false
+        },
+        {
+          "name": "recordCode",
+          "type": "string",
+          "description": "recordCode attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "title attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "modelTitle",
+          "type": "string",
+          "description": "modelTitle attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ownerName",
+          "type": "string",
+          "description": "ownerName attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrLabel",
+          "type": "string",
+          "description": "primaryAttrLabel attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrValue",
+          "type": "string",
+          "description": "primaryAttrValue attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrLabel",
+          "type": "string",
+          "description": "secondaryAttrLabel attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrValue",
+          "type": "string",
+          "description": "secondaryAttrValue attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricLabel",
+          "type": "string",
+          "description": "metricLabel attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricValue",
+          "type": "string",
+          "description": "metricValue attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "operationalSummary",
+          "type": "string",
+          "description": "operationalSummary attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "invariantRule",
+          "type": "string",
+          "description": "invariantRule attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "crossSuiteRef",
+          "type": "string",
+          "description": "crossSuiteRef attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "string",
+          "description": "updatedAt attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "contactPhone",
+          "type": "string",
+          "description": "contactPhone attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "moderationStage",
+          "type": "string",
+          "description": "moderationStage attribute for DatSourceConnection",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
         }
       ],
       "relations": []
@@ -1890,6 +2018,134 @@
           "isHidden": false,
           "isArray": false,
           "default": false
+        },
+        {
+          "name": "recordCode",
+          "type": "string",
+          "description": "recordCode attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "title attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "modelTitle",
+          "type": "string",
+          "description": "modelTitle attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ownerName",
+          "type": "string",
+          "description": "ownerName attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrLabel",
+          "type": "string",
+          "description": "primaryAttrLabel attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrValue",
+          "type": "string",
+          "description": "primaryAttrValue attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrLabel",
+          "type": "string",
+          "description": "secondaryAttrLabel attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrValue",
+          "type": "string",
+          "description": "secondaryAttrValue attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricLabel",
+          "type": "string",
+          "description": "metricLabel attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricValue",
+          "type": "string",
+          "description": "metricValue attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "operationalSummary",
+          "type": "string",
+          "description": "operationalSummary attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "invariantRule",
+          "type": "string",
+          "description": "invariantRule attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "crossSuiteRef",
+          "type": "string",
+          "description": "crossSuiteRef attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "string",
+          "description": "updatedAt attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "contactPhone",
+          "type": "string",
+          "description": "contactPhone attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "moderationStage",
+          "type": "string",
+          "description": "moderationStage attribute for DatDestinationTarget",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
         }
       ],
       "relations": [
@@ -2130,6 +2386,134 @@
           "isHidden": false,
           "isArray": false,
           "default": false
+        },
+        {
+          "name": "recordCode",
+          "type": "string",
+          "description": "recordCode attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "title attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "modelTitle",
+          "type": "string",
+          "description": "modelTitle attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ownerName",
+          "type": "string",
+          "description": "ownerName attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrLabel",
+          "type": "string",
+          "description": "primaryAttrLabel attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrValue",
+          "type": "string",
+          "description": "primaryAttrValue attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrLabel",
+          "type": "string",
+          "description": "secondaryAttrLabel attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrValue",
+          "type": "string",
+          "description": "secondaryAttrValue attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricLabel",
+          "type": "string",
+          "description": "metricLabel attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricValue",
+          "type": "string",
+          "description": "metricValue attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "operationalSummary",
+          "type": "string",
+          "description": "operationalSummary attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "invariantRule",
+          "type": "string",
+          "description": "invariantRule attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "crossSuiteRef",
+          "type": "string",
+          "description": "crossSuiteRef attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "string",
+          "description": "updatedAt attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "contactPhone",
+          "type": "string",
+          "description": "contactPhone attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "moderationStage",
+          "type": "string",
+          "description": "moderationStage attribute for DatSyncPipeline",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
         }
       ],
       "relations": [
@@ -2306,6 +2690,142 @@
           "isHidden": false,
           "isArray": false,
           "default": false
+        },
+        {
+          "name": "recordCode",
+          "type": "string",
+          "description": "recordCode attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "title attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "name attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "modelTitle",
+          "type": "string",
+          "description": "modelTitle attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ownerName",
+          "type": "string",
+          "description": "ownerName attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrLabel",
+          "type": "string",
+          "description": "primaryAttrLabel attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrValue",
+          "type": "string",
+          "description": "primaryAttrValue attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrLabel",
+          "type": "string",
+          "description": "secondaryAttrLabel attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrValue",
+          "type": "string",
+          "description": "secondaryAttrValue attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricLabel",
+          "type": "string",
+          "description": "metricLabel attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricValue",
+          "type": "string",
+          "description": "metricValue attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "operationalSummary",
+          "type": "string",
+          "description": "operationalSummary attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "invariantRule",
+          "type": "string",
+          "description": "invariantRule attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "crossSuiteRef",
+          "type": "string",
+          "description": "crossSuiteRef attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "string",
+          "description": "updatedAt attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "contactPhone",
+          "type": "string",
+          "description": "contactPhone attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "moderationStage",
+          "type": "string",
+          "description": "moderationStage attribute for DatReplicationCheckpoint",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
         }
       ],
       "relations": [
@@ -2554,6 +3074,150 @@
           "isHidden": false,
           "isArray": false,
           "default": false
+        },
+        {
+          "name": "recordCode",
+          "type": "string",
+          "description": "recordCode attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "title attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "name attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "modelTitle",
+          "type": "string",
+          "description": "modelTitle attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ownerName",
+          "type": "string",
+          "description": "ownerName attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrLabel",
+          "type": "string",
+          "description": "primaryAttrLabel attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrValue",
+          "type": "string",
+          "description": "primaryAttrValue attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrLabel",
+          "type": "string",
+          "description": "secondaryAttrLabel attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrValue",
+          "type": "string",
+          "description": "secondaryAttrValue attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricLabel",
+          "type": "string",
+          "description": "metricLabel attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricValue",
+          "type": "string",
+          "description": "metricValue attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "operationalSummary",
+          "type": "string",
+          "description": "operationalSummary attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "invariantRule",
+          "type": "string",
+          "description": "invariantRule attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "crossSuiteRef",
+          "type": "string",
+          "description": "crossSuiteRef attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "string",
+          "description": "updatedAt attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "contactPhone",
+          "type": "string",
+          "description": "contactPhone attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "moderationStage",
+          "type": "string",
+          "description": "moderationStage attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "version",
+          "type": "number",
+          "description": "version attribute for DatSyncRun",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
         }
       ],
       "relations": [
@@ -2769,6 +3433,142 @@
           "isHidden": false,
           "isArray": false,
           "default": false
+        },
+        {
+          "name": "recordCode",
+          "type": "string",
+          "description": "recordCode attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "title attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "name",
+          "type": "string",
+          "description": "name attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "modelTitle",
+          "type": "string",
+          "description": "modelTitle attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ownerName",
+          "type": "string",
+          "description": "ownerName attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrLabel",
+          "type": "string",
+          "description": "primaryAttrLabel attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrValue",
+          "type": "string",
+          "description": "primaryAttrValue attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrLabel",
+          "type": "string",
+          "description": "secondaryAttrLabel attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrValue",
+          "type": "string",
+          "description": "secondaryAttrValue attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricLabel",
+          "type": "string",
+          "description": "metricLabel attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricValue",
+          "type": "string",
+          "description": "metricValue attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "operationalSummary",
+          "type": "string",
+          "description": "operationalSummary attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "invariantRule",
+          "type": "string",
+          "description": "invariantRule attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "crossSuiteRef",
+          "type": "string",
+          "description": "crossSuiteRef attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "string",
+          "description": "updatedAt attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "contactPhone",
+          "type": "string",
+          "description": "contactPhone attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "moderationStage",
+          "type": "string",
+          "description": "moderationStage attribute for DatSchemaDriftEvent",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
         }
       ],
       "relations": [
@@ -3012,6 +3812,134 @@
           "isHidden": false,
           "isArray": false,
           "default": false
+        },
+        {
+          "name": "recordCode",
+          "type": "string",
+          "description": "recordCode attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "title",
+          "type": "string",
+          "description": "title attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "modelTitle",
+          "type": "string",
+          "description": "modelTitle attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "ownerName",
+          "type": "string",
+          "description": "ownerName attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrLabel",
+          "type": "string",
+          "description": "primaryAttrLabel attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "primaryAttrValue",
+          "type": "string",
+          "description": "primaryAttrValue attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrLabel",
+          "type": "string",
+          "description": "secondaryAttrLabel attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "secondaryAttrValue",
+          "type": "string",
+          "description": "secondaryAttrValue attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricLabel",
+          "type": "string",
+          "description": "metricLabel attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "metricValue",
+          "type": "string",
+          "description": "metricValue attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "operationalSummary",
+          "type": "string",
+          "description": "operationalSummary attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "invariantRule",
+          "type": "string",
+          "description": "invariantRule attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "crossSuiteRef",
+          "type": "string",
+          "description": "crossSuiteRef attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "updatedAt",
+          "type": "string",
+          "description": "updatedAt attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "contactPhone",
+          "type": "string",
+          "description": "contactPhone attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
+        },
+        {
+          "name": "moderationStage",
+          "type": "string",
+          "description": "moderationStage attribute for DatTransformationModel",
+          "isRequired": false,
+          "isHidden": false,
+          "isArray": false
         }
       ],
       "relations": [
@@ -3033,133 +3961,181 @@
       "name": "Pipeline Health & SLA Hub",
       "route": "integration-hub",
       "htmlFilePath": "pages/integration-hub/integration-hub.html",
-      "title": "Pipeline Health & SLA Hub",
+      "title": "Pipelines & Runs",
       "group": "Pipelines & Runs",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 1,
-      "developmentDetails": "Freshness SLA compliance cards, 24h sync throughput chart, MAR budget gauge, active failure/drift WorkItem banner, #activeFilterTagsBar."
+      "developmentDetails": "Freshness SLA compliance cards, 24h sync throughput chart, MAR budget gauge, active failure/drift WorkItem banner, #activeFilterTagsBar.",
+      "pageTitle": "Pipeline Health & SLA Hub",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Freshness SLA compliance cards, 24h sync throughput chart, MAR budget gauge, active failure/drift WorkItem banner, #activeFilterTagsBar."
     },
     {
       "name": "Sync Pipelines",
       "route": "sync-pipelines",
       "htmlFilePath": "pages/sync-pipelines/sync-pipelines.html",
-      "title": "Sync Pipelines",
+      "title": "Pipelines & Runs",
       "group": "Pipelines & Runs",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 2,
-      "developmentDetails": "findSWR table of DatSyncPipelines with sync mode pills (CDC, INCREMENTAL, SCD2), clickable pipeline name, Sync Now action, icon+text Edit, icon-only Delete."
+      "developmentDetails": "findSWR table of DatSyncPipelines with sync mode pills (CDC, INCREMENTAL, SCD2), clickable pipeline name, Sync Now action, icon+text Edit, icon-only Delete.",
+      "pageTitle": "Sync Pipelines",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "findSWR table of DatSyncPipelines with sync mode pills (CDC, INCREMENTAL, SCD2), clickable pipeline name, Sync Now action, icon+text Edit, icon-only Delete."
     },
     {
       "name": "Sync Run Ledger",
       "route": "sync-runs",
       "htmlFilePath": "pages/sync-runs/sync-runs.html",
-      "title": "Sync Run Ledger",
+      "title": "Pipelines & Runs",
       "group": "Pipelines & Runs",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 3,
-      "developmentDetails": "Execution history (DatSyncRun) filterable by SUCCEEDED / FAILED / RUNNING / QUARANTINED, rows synced, MAR delta, duration, and #activeFilterTagsBar + Clear all."
+      "developmentDetails": "Execution history (DatSyncRun) filterable by SUCCEEDED / FAILED / RUNNING / QUARANTINED, rows synced, MAR delta, duration, and #activeFilterTagsBar + Clear all.",
+      "pageTitle": "Sync Run Ledger",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Execution history (DatSyncRun) filterable by SUCCEEDED / FAILED / RUNNING / QUARANTINED, rows synced, MAR delta, duration, and #activeFilterTagsBar + Clear all."
     },
     {
       "name": "Source Connectors",
       "route": "source-connections",
       "htmlFilePath": "pages/source-connections/source-connections.html",
-      "title": "Source Connectors",
+      "title": "Connectivity",
       "group": "Connectivity",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 4,
-      "developmentDetails": "Registry of DatSourceConnections showing connector type, vault secret status, OAuth expiry countdown, and \"Test Preflight\" button."
+      "developmentDetails": "Registry of DatSourceConnections showing connector type, vault secret status, OAuth expiry countdown, and \"Test Preflight\" button.",
+      "pageTitle": "Source Connectors",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Registry of DatSourceConnections showing connector type, vault secret status, OAuth expiry countdown, and \"Test Preflight\" button."
     },
     {
       "name": "Destinations & Reverse ETL",
       "route": "destination-targets",
       "htmlFilePath": "pages/destination-targets/destination-targets.html",
-      "title": "Destinations & Reverse ETL",
+      "title": "Connectivity",
       "group": "Connectivity",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 5,
-      "developmentDetails": "Catalog of DatDestinationTargets (#099 warehouse catalogs, object staging, and Reverse ETL suite targets) with latency and write health."
+      "developmentDetails": "Catalog of DatDestinationTargets (#099 warehouse catalogs, object staging, and Reverse ETL suite targets) with latency and write health.",
+      "pageTitle": "Destinations & Reverse ETL",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Catalog of DatDestinationTargets (#099 warehouse catalogs, object staging, and Reverse ETL suite targets) with latency and write health."
     },
     {
       "name": "Custom API Connector Studio",
       "route": "custom-connector-studio",
       "htmlFilePath": "pages/custom-connector-studio/custom-connector-studio.html",
-      "title": "Custom API Connector Studio",
+      "title": "Connectivity",
       "group": "Connectivity",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 6,
-      "developmentDetails": "Declarative REST/GraphQL connector builder (ETL-004) with pagination, rate-limit policy, JSONPath tester, and AI OpenAPI spec importer."
+      "developmentDetails": "Declarative REST/GraphQL connector builder (ETL-004) with pagination, rate-limit policy, JSONPath tester, and AI OpenAPI spec importer.",
+      "pageTitle": "Custom API Connector Studio",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Declarative REST/GraphQL connector builder (ETL-004) with pagination, rate-limit policy, JSONPath tester, and AI OpenAPI spec importer."
     },
     {
       "name": "Transformations & Prep",
       "route": "transformation-models",
       "htmlFilePath": "pages/transformation-models/transformation-models.html",
-      "title": "Transformations & Prep",
+      "title": "Transform & Governance",
       "group": "Transform & Governance",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 7,
-      "developmentDetails": "Catalog of SQL & visual-prep DatTransformationModels showing materialization (VIEW / TABLE / INCREMENTAL), quality test pass rate, and #101 Git ref."
+      "developmentDetails": "Catalog of SQL & visual-prep DatTransformationModels showing materialization (VIEW / TABLE / INCREMENTAL), quality test pass rate, and #101 Git ref.",
+      "pageTitle": "Transformations & Prep",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Catalog of SQL & visual-prep DatTransformationModels showing materialization (VIEW / TABLE / INCREMENTAL), quality test pass rate, and #101 Git ref."
     },
     {
       "name": "Pipeline DAG Visualizer",
       "route": "dag-lineage-explorer",
       "htmlFilePath": "pages/dag-lineage-explorer/dag-lineage-explorer.html",
-      "title": "Pipeline DAG Visualizer",
+      "title": "Transform & Governance",
       "group": "Transform & Governance",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 8,
-      "developmentDetails": "Interactive end-to-end graph (Source -> Sync -> Staging -> Mart -> BI Model) with freshness overlays and downstream impact highlighting."
+      "developmentDetails": "Interactive end-to-end graph (Source -> Sync -> Staging -> Mart -> BI Model) with freshness overlays and downstream impact highlighting.",
+      "pageTitle": "Pipeline DAG Visualizer",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Interactive end-to-end graph (Source -> Sync -> Staging -> Mart -> BI Model) with freshness overlays and downstream impact highlighting."
     },
     {
       "name": "Schema Drift & Quarantine",
       "route": "schema-drift-center",
       "htmlFilePath": "pages/schema-drift-center/schema-drift-center.html",
-      "title": "Schema Drift & Quarantine",
+      "title": "Transform & Governance",
       "group": "Transform & Governance",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 9,
-      "developmentDetails": "DatSchemaDriftEvent queue and dead-letter quarantine inspector with column diff viewer and Approve Propagation / Block Column / Hash PII actions."
+      "developmentDetails": "DatSchemaDriftEvent queue and dead-letter quarantine inspector with column diff viewer and Approve Propagation / Block Column / Hash PII actions.",
+      "pageTitle": "Schema Drift & Quarantine",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "DatSchemaDriftEvent queue and dead-letter quarantine inspector with column diff viewer and Approve Propagation / Block Column / Hash PII actions."
     },
     {
       "name": "Pipeline Stream & Checkpoint Detail",
       "route": "pipeline-detail",
       "htmlFilePath": "pages/pipeline-detail/pipeline-detail.html",
-      "title": "Pipeline Stream & Checkpoint Detail",
-      "group": "(Hidden)",
+      "title": "*(Hidden)*",
+      "group": "*(Hidden)*",
       "icon": "fas fa-chart-bar",
       "displayInMenu": false,
       "order": 10,
-      "developmentDetails": "Per-table stream selector (#/pipeline-detail?id=...), PII column hash toggles, DatReplicationCheckpoint LSN/cursor state, surgical table resync, and Back to Pipelines."
+      "developmentDetails": "Per-table stream selector (#/pipeline-detail?id=...), PII column hash toggles, DatReplicationCheckpoint LSN/cursor state, surgical table resync, and Back to Pipelines.",
+      "pageTitle": "Pipeline Stream & Checkpoint Detail",
+      "type": "AppPage",
+      "displayOnMenu": false,
+      "description": "Per-table stream selector (#/pipeline-detail?id=...), PII column hash toggles, DatReplicationCheckpoint LSN/cursor state, surgical table resync, and Back to Pipelines."
     },
     {
       "name": "Sync Run Log & AI Diagnostics",
       "route": "run-attempt-detail",
       "htmlFilePath": "pages/run-attempt-detail/run-attempt-detail.html",
-      "title": "Sync Run Log & AI Diagnostics",
-      "group": "(Hidden)",
+      "title": "*(Hidden)*",
+      "group": "*(Hidden)*",
       "icon": "fas fa-chart-bar",
       "displayInMenu": false,
       "order": 11,
-      "developmentDetails": "Structured attempt logs (#/run-attempt-detail?id=...), HTTP/CDC error inspector, projectChannelMessage incident thread, and AI Fix Assistant."
+      "developmentDetails": "Structured attempt logs (#/run-attempt-detail?id=...), HTTP/CDC error inspector, projectChannelMessage incident thread, and AI Fix Assistant.",
+      "pageTitle": "Sync Run Log & AI Diagnostics",
+      "type": "AppPage",
+      "displayOnMenu": false,
+      "description": "Structured attempt logs (#/run-attempt-detail?id=...), HTTP/CDC error inspector, projectChannelMessage incident thread, and AI Fix Assistant."
     },
     {
       "name": "Connector & Pipeline Drawer",
       "route": "connector-pipeline-drawer",
       "htmlFilePath": "pages/connector-pipeline-drawer/connector-pipeline-drawer.html",
-      "title": "Connector & Pipeline Drawer",
-      "group": "(Hidden)",
+      "title": "*(Hidden)*",
+      "group": "*(Hidden)*",
       "icon": "fas fa-chart-bar",
       "displayInMenu": false,
       "order": 12,
-      "developmentDetails": "Sliding creation/edit drawer for DatSourceConnection, DatSyncPipeline, and DatTransformationModel; enforces try/catch/finally button reset and closePageDrawer()."
+      "developmentDetails": "Sliding creation/edit drawer for DatSourceConnection, DatSyncPipeline, and DatTransformationModel; enforces try/catch/finally button reset and closePageDrawer().",
+      "pageTitle": "Connector & Pipeline Drawer",
+      "type": "AppPage",
+      "displayOnMenu": false,
+      "description": "Sliding creation/edit drawer for DatSourceConnection, DatSyncPipeline, and DatTransformationModel; enforces try/catch/finally button reset and closePageDrawer()."
     }
   ],
   "workflows": [],
@@ -3170,133 +4146,181 @@
       "name": "Pipeline Health & SLA Hub",
       "route": "integration-hub",
       "htmlFilePath": "pages/integration-hub/integration-hub.html",
-      "title": "Pipeline Health & SLA Hub",
+      "title": "Pipelines & Runs",
       "group": "Pipelines & Runs",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 1,
-      "developmentDetails": "Freshness SLA compliance cards, 24h sync throughput chart, MAR budget gauge, active failure/drift WorkItem banner, #activeFilterTagsBar."
+      "developmentDetails": "Freshness SLA compliance cards, 24h sync throughput chart, MAR budget gauge, active failure/drift WorkItem banner, #activeFilterTagsBar.",
+      "pageTitle": "Pipeline Health & SLA Hub",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Freshness SLA compliance cards, 24h sync throughput chart, MAR budget gauge, active failure/drift WorkItem banner, #activeFilterTagsBar."
     },
     {
       "name": "Sync Pipelines",
       "route": "sync-pipelines",
       "htmlFilePath": "pages/sync-pipelines/sync-pipelines.html",
-      "title": "Sync Pipelines",
+      "title": "Pipelines & Runs",
       "group": "Pipelines & Runs",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 2,
-      "developmentDetails": "findSWR table of DatSyncPipelines with sync mode pills (CDC, INCREMENTAL, SCD2), clickable pipeline name, Sync Now action, icon+text Edit, icon-only Delete."
+      "developmentDetails": "findSWR table of DatSyncPipelines with sync mode pills (CDC, INCREMENTAL, SCD2), clickable pipeline name, Sync Now action, icon+text Edit, icon-only Delete.",
+      "pageTitle": "Sync Pipelines",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "findSWR table of DatSyncPipelines with sync mode pills (CDC, INCREMENTAL, SCD2), clickable pipeline name, Sync Now action, icon+text Edit, icon-only Delete."
     },
     {
       "name": "Sync Run Ledger",
       "route": "sync-runs",
       "htmlFilePath": "pages/sync-runs/sync-runs.html",
-      "title": "Sync Run Ledger",
+      "title": "Pipelines & Runs",
       "group": "Pipelines & Runs",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 3,
-      "developmentDetails": "Execution history (DatSyncRun) filterable by SUCCEEDED / FAILED / RUNNING / QUARANTINED, rows synced, MAR delta, duration, and #activeFilterTagsBar + Clear all."
+      "developmentDetails": "Execution history (DatSyncRun) filterable by SUCCEEDED / FAILED / RUNNING / QUARANTINED, rows synced, MAR delta, duration, and #activeFilterTagsBar + Clear all.",
+      "pageTitle": "Sync Run Ledger",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Execution history (DatSyncRun) filterable by SUCCEEDED / FAILED / RUNNING / QUARANTINED, rows synced, MAR delta, duration, and #activeFilterTagsBar + Clear all."
     },
     {
       "name": "Source Connectors",
       "route": "source-connections",
       "htmlFilePath": "pages/source-connections/source-connections.html",
-      "title": "Source Connectors",
+      "title": "Connectivity",
       "group": "Connectivity",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 4,
-      "developmentDetails": "Registry of DatSourceConnections showing connector type, vault secret status, OAuth expiry countdown, and \"Test Preflight\" button."
+      "developmentDetails": "Registry of DatSourceConnections showing connector type, vault secret status, OAuth expiry countdown, and \"Test Preflight\" button.",
+      "pageTitle": "Source Connectors",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Registry of DatSourceConnections showing connector type, vault secret status, OAuth expiry countdown, and \"Test Preflight\" button."
     },
     {
       "name": "Destinations & Reverse ETL",
       "route": "destination-targets",
       "htmlFilePath": "pages/destination-targets/destination-targets.html",
-      "title": "Destinations & Reverse ETL",
+      "title": "Connectivity",
       "group": "Connectivity",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 5,
-      "developmentDetails": "Catalog of DatDestinationTargets (#099 warehouse catalogs, object staging, and Reverse ETL suite targets) with latency and write health."
+      "developmentDetails": "Catalog of DatDestinationTargets (#099 warehouse catalogs, object staging, and Reverse ETL suite targets) with latency and write health.",
+      "pageTitle": "Destinations & Reverse ETL",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Catalog of DatDestinationTargets (#099 warehouse catalogs, object staging, and Reverse ETL suite targets) with latency and write health."
     },
     {
       "name": "Custom API Connector Studio",
       "route": "custom-connector-studio",
       "htmlFilePath": "pages/custom-connector-studio/custom-connector-studio.html",
-      "title": "Custom API Connector Studio",
+      "title": "Connectivity",
       "group": "Connectivity",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 6,
-      "developmentDetails": "Declarative REST/GraphQL connector builder (ETL-004) with pagination, rate-limit policy, JSONPath tester, and AI OpenAPI spec importer."
+      "developmentDetails": "Declarative REST/GraphQL connector builder (ETL-004) with pagination, rate-limit policy, JSONPath tester, and AI OpenAPI spec importer.",
+      "pageTitle": "Custom API Connector Studio",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Declarative REST/GraphQL connector builder (ETL-004) with pagination, rate-limit policy, JSONPath tester, and AI OpenAPI spec importer."
     },
     {
       "name": "Transformations & Prep",
       "route": "transformation-models",
       "htmlFilePath": "pages/transformation-models/transformation-models.html",
-      "title": "Transformations & Prep",
+      "title": "Transform & Governance",
       "group": "Transform & Governance",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 7,
-      "developmentDetails": "Catalog of SQL & visual-prep DatTransformationModels showing materialization (VIEW / TABLE / INCREMENTAL), quality test pass rate, and #101 Git ref."
+      "developmentDetails": "Catalog of SQL & visual-prep DatTransformationModels showing materialization (VIEW / TABLE / INCREMENTAL), quality test pass rate, and #101 Git ref.",
+      "pageTitle": "Transformations & Prep",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Catalog of SQL & visual-prep DatTransformationModels showing materialization (VIEW / TABLE / INCREMENTAL), quality test pass rate, and #101 Git ref."
     },
     {
       "name": "Pipeline DAG Visualizer",
       "route": "dag-lineage-explorer",
       "htmlFilePath": "pages/dag-lineage-explorer/dag-lineage-explorer.html",
-      "title": "Pipeline DAG Visualizer",
+      "title": "Transform & Governance",
       "group": "Transform & Governance",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 8,
-      "developmentDetails": "Interactive end-to-end graph (Source -> Sync -> Staging -> Mart -> BI Model) with freshness overlays and downstream impact highlighting."
+      "developmentDetails": "Interactive end-to-end graph (Source -> Sync -> Staging -> Mart -> BI Model) with freshness overlays and downstream impact highlighting.",
+      "pageTitle": "Pipeline DAG Visualizer",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "Interactive end-to-end graph (Source -> Sync -> Staging -> Mart -> BI Model) with freshness overlays and downstream impact highlighting."
     },
     {
       "name": "Schema Drift & Quarantine",
       "route": "schema-drift-center",
       "htmlFilePath": "pages/schema-drift-center/schema-drift-center.html",
-      "title": "Schema Drift & Quarantine",
+      "title": "Transform & Governance",
       "group": "Transform & Governance",
       "icon": "fas fa-chart-bar",
       "displayInMenu": true,
       "order": 9,
-      "developmentDetails": "DatSchemaDriftEvent queue and dead-letter quarantine inspector with column diff viewer and Approve Propagation / Block Column / Hash PII actions."
+      "developmentDetails": "DatSchemaDriftEvent queue and dead-letter quarantine inspector with column diff viewer and Approve Propagation / Block Column / Hash PII actions.",
+      "pageTitle": "Schema Drift & Quarantine",
+      "type": "AppPage",
+      "displayOnMenu": true,
+      "description": "DatSchemaDriftEvent queue and dead-letter quarantine inspector with column diff viewer and Approve Propagation / Block Column / Hash PII actions."
     },
     {
       "name": "Pipeline Stream & Checkpoint Detail",
       "route": "pipeline-detail",
       "htmlFilePath": "pages/pipeline-detail/pipeline-detail.html",
-      "title": "Pipeline Stream & Checkpoint Detail",
-      "group": "(Hidden)",
+      "title": "*(Hidden)*",
+      "group": "*(Hidden)*",
       "icon": "fas fa-chart-bar",
       "displayInMenu": false,
       "order": 10,
-      "developmentDetails": "Per-table stream selector (#/pipeline-detail?id=...), PII column hash toggles, DatReplicationCheckpoint LSN/cursor state, surgical table resync, and Back to Pipelines."
+      "developmentDetails": "Per-table stream selector (#/pipeline-detail?id=...), PII column hash toggles, DatReplicationCheckpoint LSN/cursor state, surgical table resync, and Back to Pipelines.",
+      "pageTitle": "Pipeline Stream & Checkpoint Detail",
+      "type": "AppPage",
+      "displayOnMenu": false,
+      "description": "Per-table stream selector (#/pipeline-detail?id=...), PII column hash toggles, DatReplicationCheckpoint LSN/cursor state, surgical table resync, and Back to Pipelines."
     },
     {
       "name": "Sync Run Log & AI Diagnostics",
       "route": "run-attempt-detail",
       "htmlFilePath": "pages/run-attempt-detail/run-attempt-detail.html",
-      "title": "Sync Run Log & AI Diagnostics",
-      "group": "(Hidden)",
+      "title": "*(Hidden)*",
+      "group": "*(Hidden)*",
       "icon": "fas fa-chart-bar",
       "displayInMenu": false,
       "order": 11,
-      "developmentDetails": "Structured attempt logs (#/run-attempt-detail?id=...), HTTP/CDC error inspector, projectChannelMessage incident thread, and AI Fix Assistant."
+      "developmentDetails": "Structured attempt logs (#/run-attempt-detail?id=...), HTTP/CDC error inspector, projectChannelMessage incident thread, and AI Fix Assistant.",
+      "pageTitle": "Sync Run Log & AI Diagnostics",
+      "type": "AppPage",
+      "displayOnMenu": false,
+      "description": "Structured attempt logs (#/run-attempt-detail?id=...), HTTP/CDC error inspector, projectChannelMessage incident thread, and AI Fix Assistant."
     },
     {
       "name": "Connector & Pipeline Drawer",
       "route": "connector-pipeline-drawer",
       "htmlFilePath": "pages/connector-pipeline-drawer/connector-pipeline-drawer.html",
-      "title": "Connector & Pipeline Drawer",
-      "group": "(Hidden)",
+      "title": "*(Hidden)*",
+      "group": "*(Hidden)*",
       "icon": "fas fa-chart-bar",
       "displayInMenu": false,
       "order": 12,
-      "developmentDetails": "Sliding creation/edit drawer for DatSourceConnection, DatSyncPipeline, and DatTransformationModel; enforces try/catch/finally button reset and closePageDrawer()."
+      "developmentDetails": "Sliding creation/edit drawer for DatSourceConnection, DatSyncPipeline, and DatTransformationModel; enforces try/catch/finally button reset and closePageDrawer().",
+      "pageTitle": "Connector & Pipeline Drawer",
+      "type": "AppPage",
+      "displayOnMenu": false,
+      "description": "Sliding creation/edit drawer for DatSourceConnection, DatSyncPipeline, and DatTransformationModel; enforces try/catch/finally button reset and closePageDrawer()."
     }
   ]
 }

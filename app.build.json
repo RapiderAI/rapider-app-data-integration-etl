@@ -4,8 +4,8 @@
   "appName": "Rapider Data Integration / ETL",
   "repository": "",
   "version": "1.0.0",
-  "lastBuildTimestamp": "2026-11-01T11:22:28.294Z",
-  "lastCommit": "uncommitted",
+  "lastBuildTimestamp": "2026-11-02T09:47:54.239Z",
+  "lastCommit": "a766210",
   "summary": {
     "status": "qa_passed",
     "complianceRate": 100,
@@ -18,147 +18,147 @@
     "failedQaPasses": 0,
     "e2eSuitesCount": 0,
     "e2ePassedCount": 0,
-    "lastFullAudit": "2026-11-01T11:22:28.294Z",
+    "lastFullAudit": "2026-11-02T09:47:54.239Z",
     "lastE2ERun": null
   },
   "qaPasses": {
     "pass-01-routing": {
       "name": "pass-01-routing",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-02-swr": {
       "name": "pass-02-swr",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-03-data-models": {
       "name": "pass-03-data-models",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-04-modals": {
       "name": "pass-04-modals",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-05-drawers": {
       "name": "pass-05-drawers",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-06-responsive": {
       "name": "pass-06-responsive",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-07-themes": {
       "name": "pass-07-themes",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-08-notifications": {
       "name": "pass-08-notifications",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-09-payloads": {
       "name": "pass-09-payloads",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-10-components": {
       "name": "pass-10-components",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-11-e2e-expectations": {
       "name": "pass-11-e2e-expectations",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-12-asset-externalization": {
       "name": "pass-12-asset-externalization",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-13-manifest-sync": {
       "name": "pass-13-manifest-sync",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-14-ui-states": {
       "name": "pass-14-ui-states",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-15-security": {
       "name": "pass-15-security",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-16-accessibility": {
       "name": "pass-16-accessibility",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-17-input-formatting": {
       "name": "pass-17-input-formatting",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-18-kanban-list-views": {
       "name": "pass-18-kanban-list-views",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-19-ui-best-practices": {
       "name": "pass-19-ui-best-practices",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     },
     "pass-20-search-filters": {
       "name": "pass-20-search-filters",
       "status": "passed",
-      "lastRun": "2026-11-01T11:22:28.294Z",
+      "lastRun": "2026-11-02T09:47:54.239Z",
       "pagesCovered": 12,
       "issuesFound": 0
     }
@@ -167,408 +167,258 @@
     "pages/integration-hub/integration-hub.html": {
       "pageName": "Pipeline Health & SLA Hub",
       "route": "integration-hub",
-      "fileHash": "sha256:9c4fb6e7e8ad4a9f468a77df50f7d22ac6b757a8bb523ba3fbc5ddcc87773575",
-      "lastModified": "2026-11-01T11:22:28.183Z",
-      "lastTested": "2026-11-01T11:22:28.294Z",
+      "fileHash": "sha256:9f971aa07acc439eb5ce960bb0946be83e107f737f40b968ae145a03091729bc",
+      "lastModified": "2026-11-02T09:47:54.117Z",
+      "lastTested": "2026-11-02T09:47:54.239Z",
       "status": "passed",
       "metrics": {
-        "buttonsTotal": 8,
-        "buttonsWithActions": 8,
+        "buttonsTotal": 6,
+        "buttonsWithActions": 6,
         "deadButtons": 0,
-        "linksTotal": 12,
-        "linksValid": 12,
+        "linksTotal": 14,
+        "linksValid": 14,
         "nativeAlerts": 0,
         "contrastCompliant": true,
-        "swrCalls": 2,
-        "modalsTotal": 1
+        "swrCalls": 0,
+        "modalsTotal": 0
       },
       "issues": [],
-      "warnings": [
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_LIGHT_BACKGROUND",
-          "message": "Container has \"bg-white\" without a corresponding \"dark:bg-*\" variant class (sidebar w-64 bg-white border-r border-slate-200 fl).",
-          "snippet": "<div class=\"sidebar w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 transition-all duration-300 z-30 select-none\">"
-        },
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_DARK_TEXT",
-          "message": "Text has hardcoded dark color without a corresponding \"dark:text-*\" variant (bg-slate-50 text-slate-900 font-sans antialiased m).",
-          "snippet": "<div class=\"bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex\">"
-        }
-      ]
+      "warnings": []
     },
     "pages/sync-pipelines/sync-pipelines.html": {
       "pageName": "Sync Pipelines",
       "route": "sync-pipelines",
-      "fileHash": "sha256:68e0bdaaf5478df0516cb2efafb42cac1f93b2341fc056bdd819febc60706ed8",
-      "lastModified": "2026-11-01T11:22:28.184Z",
-      "lastTested": "2026-11-01T11:22:28.294Z",
+      "fileHash": "sha256:8253c87b9327fb26d78c2079a5f5a51c0fa4fbdb5e635a9504529f030117b45e",
+      "lastModified": "2026-11-02T09:47:54.118Z",
+      "lastTested": "2026-11-02T09:47:54.239Z",
       "status": "passed",
       "metrics": {
-        "buttonsTotal": 8,
-        "buttonsWithActions": 8,
+        "buttonsTotal": 6,
+        "buttonsWithActions": 6,
         "deadButtons": 0,
-        "linksTotal": 12,
-        "linksValid": 12,
+        "linksTotal": 14,
+        "linksValid": 14,
         "nativeAlerts": 0,
         "contrastCompliant": true,
-        "swrCalls": 2,
-        "modalsTotal": 1
+        "swrCalls": 0,
+        "modalsTotal": 0
       },
       "issues": [],
-      "warnings": [
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_LIGHT_BACKGROUND",
-          "message": "Container has \"bg-white\" without a corresponding \"dark:bg-*\" variant class (sidebar w-64 bg-white border-r border-slate-200 fl).",
-          "snippet": "<div class=\"sidebar w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 transition-all duration-300 z-30 select-none\">"
-        },
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_DARK_TEXT",
-          "message": "Text has hardcoded dark color without a corresponding \"dark:text-*\" variant (bg-slate-50 text-slate-900 font-sans antialiased m).",
-          "snippet": "<div class=\"bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex\">"
-        }
-      ]
+      "warnings": []
     },
     "pages/sync-runs/sync-runs.html": {
       "pageName": "Sync Run Ledger",
       "route": "sync-runs",
-      "fileHash": "sha256:9ccbdd87b920d1328302aa5158248f27613371b98e1e6466ad2a664259770719",
-      "lastModified": "2026-11-01T11:22:28.184Z",
-      "lastTested": "2026-11-01T11:22:28.294Z",
+      "fileHash": "sha256:be64349f634796adbcee1fc0fda92c897d4a959ed81f91c43b5730f5e65a06a7",
+      "lastModified": "2026-11-02T09:47:54.118Z",
+      "lastTested": "2026-11-02T09:47:54.239Z",
       "status": "passed",
       "metrics": {
-        "buttonsTotal": 8,
-        "buttonsWithActions": 8,
-        "deadButtons": 0,
-        "linksTotal": 12,
-        "linksValid": 12,
-        "nativeAlerts": 0,
-        "contrastCompliant": true,
-        "swrCalls": 2,
-        "modalsTotal": 1
-      },
-      "issues": [],
-      "warnings": [
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_LIGHT_BACKGROUND",
-          "message": "Container has \"bg-white\" without a corresponding \"dark:bg-*\" variant class (sidebar w-64 bg-white border-r border-slate-200 fl).",
-          "snippet": "<div class=\"sidebar w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 transition-all duration-300 z-30 select-none\">"
-        },
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_DARK_TEXT",
-          "message": "Text has hardcoded dark color without a corresponding \"dark:text-*\" variant (bg-slate-50 text-slate-900 font-sans antialiased m).",
-          "snippet": "<div class=\"bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex\">"
-        }
-      ]
-    },
-    "pages/source-connections/source-connections.html": {
-      "pageName": "Source Connectors",
-      "route": "source-connections",
-      "fileHash": "sha256:280665cb1a58519e264870f2eee411052470ee0e7eb671d7543231a1fc61229c",
-      "lastModified": "2026-11-01T11:22:28.184Z",
-      "lastTested": "2026-11-01T11:22:28.294Z",
-      "status": "passed",
-      "metrics": {
-        "buttonsTotal": 8,
-        "buttonsWithActions": 8,
-        "deadButtons": 0,
-        "linksTotal": 12,
-        "linksValid": 12,
-        "nativeAlerts": 0,
-        "contrastCompliant": true,
-        "swrCalls": 2,
-        "modalsTotal": 1
-      },
-      "issues": [],
-      "warnings": [
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_LIGHT_BACKGROUND",
-          "message": "Container has \"bg-white\" without a corresponding \"dark:bg-*\" variant class (sidebar w-64 bg-white border-r border-slate-200 fl).",
-          "snippet": "<div class=\"sidebar w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 transition-all duration-300 z-30 select-none\">"
-        },
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_DARK_TEXT",
-          "message": "Text has hardcoded dark color without a corresponding \"dark:text-*\" variant (bg-slate-50 text-slate-900 font-sans antialiased m).",
-          "snippet": "<div class=\"bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex\">"
-        }
-      ]
-    },
-    "pages/destination-targets/destination-targets.html": {
-      "pageName": "Destinations & Reverse ETL",
-      "route": "destination-targets",
-      "fileHash": "sha256:eea0dfe8b3d74d5c443bf13d1682b6c86c1c21b4fba73a06034476f41f47dd88",
-      "lastModified": "2026-11-01T11:22:28.184Z",
-      "lastTested": "2026-11-01T11:22:28.294Z",
-      "status": "passed",
-      "metrics": {
-        "buttonsTotal": 8,
-        "buttonsWithActions": 8,
-        "deadButtons": 0,
-        "linksTotal": 12,
-        "linksValid": 12,
-        "nativeAlerts": 0,
-        "contrastCompliant": true,
-        "swrCalls": 2,
-        "modalsTotal": 1
-      },
-      "issues": [],
-      "warnings": [
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_LIGHT_BACKGROUND",
-          "message": "Container has \"bg-white\" without a corresponding \"dark:bg-*\" variant class (sidebar w-64 bg-white border-r border-slate-200 fl).",
-          "snippet": "<div class=\"sidebar w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 transition-all duration-300 z-30 select-none\">"
-        },
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_DARK_TEXT",
-          "message": "Text has hardcoded dark color without a corresponding \"dark:text-*\" variant (bg-slate-50 text-slate-900 font-sans antialiased m).",
-          "snippet": "<div class=\"bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex\">"
-        }
-      ]
-    },
-    "pages/custom-connector-studio/custom-connector-studio.html": {
-      "pageName": "Custom API Connector Studio",
-      "route": "custom-connector-studio",
-      "fileHash": "sha256:8688eac529196ba5e4db32275a9b428da0d38c01ac0e57924745a58288a4edac",
-      "lastModified": "2026-11-01T11:22:28.184Z",
-      "lastTested": "2026-11-01T11:22:28.294Z",
-      "status": "passed",
-      "metrics": {
-        "buttonsTotal": 8,
-        "buttonsWithActions": 8,
-        "deadButtons": 0,
-        "linksTotal": 12,
-        "linksValid": 12,
-        "nativeAlerts": 0,
-        "contrastCompliant": true,
-        "swrCalls": 2,
-        "modalsTotal": 1
-      },
-      "issues": [],
-      "warnings": [
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_LIGHT_BACKGROUND",
-          "message": "Container has \"bg-white\" without a corresponding \"dark:bg-*\" variant class (sidebar w-64 bg-white border-r border-slate-200 fl).",
-          "snippet": "<div class=\"sidebar w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 transition-all duration-300 z-30 select-none\">"
-        },
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_DARK_TEXT",
-          "message": "Text has hardcoded dark color without a corresponding \"dark:text-*\" variant (bg-slate-50 text-slate-900 font-sans antialiased m).",
-          "snippet": "<div class=\"bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex\">"
-        }
-      ]
-    },
-    "pages/transformation-models/transformation-models.html": {
-      "pageName": "Transformations & Prep",
-      "route": "transformation-models",
-      "fileHash": "sha256:b434331c000450105f0ccbb12be4d7fae0b9336914cbe913b21935fd82d28b46",
-      "lastModified": "2026-11-01T11:22:28.184Z",
-      "lastTested": "2026-11-01T11:22:28.294Z",
-      "status": "passed",
-      "metrics": {
-        "buttonsTotal": 8,
-        "buttonsWithActions": 8,
-        "deadButtons": 0,
-        "linksTotal": 12,
-        "linksValid": 12,
-        "nativeAlerts": 0,
-        "contrastCompliant": true,
-        "swrCalls": 2,
-        "modalsTotal": 1
-      },
-      "issues": [],
-      "warnings": [
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_LIGHT_BACKGROUND",
-          "message": "Container has \"bg-white\" without a corresponding \"dark:bg-*\" variant class (sidebar w-64 bg-white border-r border-slate-200 fl).",
-          "snippet": "<div class=\"sidebar w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 transition-all duration-300 z-30 select-none\">"
-        },
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_DARK_TEXT",
-          "message": "Text has hardcoded dark color without a corresponding \"dark:text-*\" variant (bg-slate-50 text-slate-900 font-sans antialiased m).",
-          "snippet": "<div class=\"bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex\">"
-        }
-      ]
-    },
-    "pages/dag-lineage-explorer/dag-lineage-explorer.html": {
-      "pageName": "Pipeline DAG Visualizer",
-      "route": "dag-lineage-explorer",
-      "fileHash": "sha256:c44e616b072a83096e736b7d3f3a662a9d6a1f1128f76b0055e8ff59d1e5ea2d",
-      "lastModified": "2026-11-01T11:22:28.185Z",
-      "lastTested": "2026-11-01T11:22:28.294Z",
-      "status": "passed",
-      "metrics": {
-        "buttonsTotal": 8,
-        "buttonsWithActions": 8,
-        "deadButtons": 0,
-        "linksTotal": 12,
-        "linksValid": 12,
-        "nativeAlerts": 0,
-        "contrastCompliant": true,
-        "swrCalls": 2,
-        "modalsTotal": 1
-      },
-      "issues": [],
-      "warnings": [
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_LIGHT_BACKGROUND",
-          "message": "Container has \"bg-white\" without a corresponding \"dark:bg-*\" variant class (sidebar w-64 bg-white border-r border-slate-200 fl).",
-          "snippet": "<div class=\"sidebar w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 transition-all duration-300 z-30 select-none\">"
-        },
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_DARK_TEXT",
-          "message": "Text has hardcoded dark color without a corresponding \"dark:text-*\" variant (bg-slate-50 text-slate-900 font-sans antialiased m).",
-          "snippet": "<div class=\"bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex\">"
-        }
-      ]
-    },
-    "pages/schema-drift-center/schema-drift-center.html": {
-      "pageName": "Schema Drift & Quarantine",
-      "route": "schema-drift-center",
-      "fileHash": "sha256:0b9305050108072b51579d2e5fd1f60f52997b2df458d05b9d32c428fcbbf3ed",
-      "lastModified": "2026-11-01T11:22:28.185Z",
-      "lastTested": "2026-11-01T11:22:28.294Z",
-      "status": "passed",
-      "metrics": {
-        "buttonsTotal": 8,
-        "buttonsWithActions": 8,
-        "deadButtons": 0,
-        "linksTotal": 12,
-        "linksValid": 12,
-        "nativeAlerts": 0,
-        "contrastCompliant": true,
-        "swrCalls": 2,
-        "modalsTotal": 1
-      },
-      "issues": [],
-      "warnings": [
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_LIGHT_BACKGROUND",
-          "message": "Container has \"bg-white\" without a corresponding \"dark:bg-*\" variant class (sidebar w-64 bg-white border-r border-slate-200 fl).",
-          "snippet": "<div class=\"sidebar w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 transition-all duration-300 z-30 select-none\">"
-        },
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_DARK_TEXT",
-          "message": "Text has hardcoded dark color without a corresponding \"dark:text-*\" variant (bg-slate-50 text-slate-900 font-sans antialiased m).",
-          "snippet": "<div class=\"bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex\">"
-        }
-      ]
-    },
-    "pages/pipeline-detail/pipeline-detail.html": {
-      "pageName": "Pipeline Stream & Checkpoint Detail",
-      "route": "pipeline-detail",
-      "fileHash": "sha256:a5d145bc28f0404b6400e88b7c0fc30b1222fe08ec795fe902028a83d433d03c",
-      "lastModified": "2026-11-01T11:22:28.185Z",
-      "lastTested": "2026-11-01T11:22:28.294Z",
-      "status": "passed",
-      "metrics": {
-        "buttonsTotal": 9,
-        "buttonsWithActions": 9,
-        "deadButtons": 0,
-        "linksTotal": 14,
-        "linksValid": 14,
-        "nativeAlerts": 0,
-        "contrastCompliant": true,
-        "swrCalls": 0,
-        "modalsTotal": 1
-      },
-      "issues": [],
-      "warnings": [
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_LIGHT_BACKGROUND",
-          "message": "Container has \"bg-white\" without a corresponding \"dark:bg-*\" variant class (sidebar w-64 bg-white border-r border-slate-200 fl).",
-          "snippet": "<div class=\"sidebar w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 transition-all duration-300 z-30 select-none\">"
-        },
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_DARK_TEXT",
-          "message": "Text has hardcoded dark color without a corresponding \"dark:text-*\" variant (bg-slate-50 text-slate-900 font-sans antialiased m).",
-          "snippet": "<div class=\"bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex\">"
-        }
-      ]
-    },
-    "pages/run-attempt-detail/run-attempt-detail.html": {
-      "pageName": "Sync Run Log & AI Diagnostics",
-      "route": "run-attempt-detail",
-      "fileHash": "sha256:0aaf5677cb01c0f2e046d3930109f10a74c25494f432238ac01008133fec87d9",
-      "lastModified": "2026-11-01T11:22:28.185Z",
-      "lastTested": "2026-11-01T11:22:28.294Z",
-      "status": "passed",
-      "metrics": {
-        "buttonsTotal": 9,
-        "buttonsWithActions": 9,
-        "deadButtons": 0,
-        "linksTotal": 14,
-        "linksValid": 14,
-        "nativeAlerts": 0,
-        "contrastCompliant": true,
-        "swrCalls": 0,
-        "modalsTotal": 1
-      },
-      "issues": [],
-      "warnings": [
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_LIGHT_BACKGROUND",
-          "message": "Container has \"bg-white\" without a corresponding \"dark:bg-*\" variant class (sidebar w-64 bg-white border-r border-slate-200 fl).",
-          "snippet": "<div class=\"sidebar w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 transition-all duration-300 z-30 select-none\">"
-        },
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_DARK_TEXT",
-          "message": "Text has hardcoded dark color without a corresponding \"dark:text-*\" variant (bg-slate-50 text-slate-900 font-sans antialiased m).",
-          "snippet": "<div class=\"bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex\">"
-        }
-      ]
-    },
-    "pages/connector-pipeline-drawer/connector-pipeline-drawer.html": {
-      "pageName": "Connector & Pipeline Drawer",
-      "route": "connector-pipeline-drawer",
-      "fileHash": "sha256:139ad65ee6109ca9da3434d0931f6b5ec2d755d073390690d95f446433aba6c5",
-      "lastModified": "2026-11-01T11:22:28.185Z",
-      "lastTested": "2026-11-01T11:22:28.294Z",
-      "status": "passed",
-      "metrics": {
-        "buttonsTotal": 7,
-        "buttonsWithActions": 7,
+        "buttonsTotal": 6,
+        "buttonsWithActions": 6,
         "deadButtons": 0,
         "linksTotal": 14,
         "linksValid": 14,
         "nativeAlerts": 0,
         "contrastCompliant": true,
         "swrCalls": 1,
-        "modalsTotal": 1
+        "modalsTotal": 0
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "pages/source-connections/source-connections.html": {
+      "pageName": "Source Connectors",
+      "route": "source-connections",
+      "fileHash": "sha256:12c31c849fe6233867fe1a1e0b8d4692319236428c125043c41914dcf93b06a1",
+      "lastModified": "2026-11-02T09:47:54.118Z",
+      "lastTested": "2026-11-02T09:47:54.239Z",
+      "status": "passed",
+      "metrics": {
+        "buttonsTotal": 6,
+        "buttonsWithActions": 6,
+        "deadButtons": 0,
+        "linksTotal": 14,
+        "linksValid": 14,
+        "nativeAlerts": 0,
+        "contrastCompliant": true,
+        "swrCalls": 1,
+        "modalsTotal": 0
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "pages/destination-targets/destination-targets.html": {
+      "pageName": "Destinations & Reverse ETL",
+      "route": "destination-targets",
+      "fileHash": "sha256:7fd691b883aa85893b860e911d04d91645a657536ef71712bdbd956026ec75d7",
+      "lastModified": "2026-11-02T09:47:54.119Z",
+      "lastTested": "2026-11-02T09:47:54.239Z",
+      "status": "passed",
+      "metrics": {
+        "buttonsTotal": 6,
+        "buttonsWithActions": 6,
+        "deadButtons": 0,
+        "linksTotal": 14,
+        "linksValid": 14,
+        "nativeAlerts": 0,
+        "contrastCompliant": true,
+        "swrCalls": 1,
+        "modalsTotal": 0
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "pages/custom-connector-studio/custom-connector-studio.html": {
+      "pageName": "Custom API Connector Studio",
+      "route": "custom-connector-studio",
+      "fileHash": "sha256:b577c8e8d3ec99ee555a5f6899256642a6289efc36df642e7036636a911d7577",
+      "lastModified": "2026-11-02T09:47:54.120Z",
+      "lastTested": "2026-11-02T09:47:54.239Z",
+      "status": "passed",
+      "metrics": {
+        "buttonsTotal": 6,
+        "buttonsWithActions": 6,
+        "deadButtons": 0,
+        "linksTotal": 14,
+        "linksValid": 14,
+        "nativeAlerts": 0,
+        "contrastCompliant": true,
+        "swrCalls": 1,
+        "modalsTotal": 0
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "pages/transformation-models/transformation-models.html": {
+      "pageName": "Transformations & Prep",
+      "route": "transformation-models",
+      "fileHash": "sha256:531539b1823d7cb86af55ed77f174160f618f9b599447a668b7238a73f95b40d",
+      "lastModified": "2026-11-02T09:47:54.121Z",
+      "lastTested": "2026-11-02T09:47:54.239Z",
+      "status": "passed",
+      "metrics": {
+        "buttonsTotal": 6,
+        "buttonsWithActions": 6,
+        "deadButtons": 0,
+        "linksTotal": 14,
+        "linksValid": 14,
+        "nativeAlerts": 0,
+        "contrastCompliant": true,
+        "swrCalls": 1,
+        "modalsTotal": 0
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "pages/dag-lineage-explorer/dag-lineage-explorer.html": {
+      "pageName": "Pipeline DAG Visualizer",
+      "route": "dag-lineage-explorer",
+      "fileHash": "sha256:8e627f827b5cad5e1f37c1a4c94c47eff0003bc58862c3f154e204989efed2c4",
+      "lastModified": "2026-11-02T09:47:54.122Z",
+      "lastTested": "2026-11-02T09:47:54.239Z",
+      "status": "passed",
+      "metrics": {
+        "buttonsTotal": 6,
+        "buttonsWithActions": 6,
+        "deadButtons": 0,
+        "linksTotal": 14,
+        "linksValid": 14,
+        "nativeAlerts": 0,
+        "contrastCompliant": true,
+        "swrCalls": 0,
+        "modalsTotal": 0
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "pages/schema-drift-center/schema-drift-center.html": {
+      "pageName": "Schema Drift & Quarantine",
+      "route": "schema-drift-center",
+      "fileHash": "sha256:fb42af7cad846c212f88579dd7772be8021b1d3eb334e3ebf8ef6fb4d23870a4",
+      "lastModified": "2026-11-02T09:47:54.122Z",
+      "lastTested": "2026-11-02T09:47:54.239Z",
+      "status": "passed",
+      "metrics": {
+        "buttonsTotal": 6,
+        "buttonsWithActions": 6,
+        "deadButtons": 0,
+        "linksTotal": 14,
+        "linksValid": 14,
+        "nativeAlerts": 0,
+        "contrastCompliant": true,
+        "swrCalls": 0,
+        "modalsTotal": 0
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "pages/pipeline-detail/pipeline-detail.html": {
+      "pageName": "Pipeline Stream & Checkpoint Detail",
+      "route": "pipeline-detail",
+      "fileHash": "sha256:eecbadb9f4a522ec7f0aaea448dc73514e9f193d4fb16580a39f0923313d83a7",
+      "lastModified": "2026-11-02T09:47:54.123Z",
+      "lastTested": "2026-11-02T09:47:54.239Z",
+      "status": "passed",
+      "metrics": {
+        "buttonsTotal": 5,
+        "buttonsWithActions": 5,
+        "deadButtons": 0,
+        "linksTotal": 15,
+        "linksValid": 15,
+        "nativeAlerts": 0,
+        "contrastCompliant": true,
+        "swrCalls": 0,
+        "modalsTotal": 0
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "pages/run-attempt-detail/run-attempt-detail.html": {
+      "pageName": "Sync Run Log & AI Diagnostics",
+      "route": "run-attempt-detail",
+      "fileHash": "sha256:7a43a2ae16b576ed40d53e6936b73b8fff5ca6a1ddf37fdb9f5c1f7c20b67ef1",
+      "lastModified": "2026-11-02T09:47:54.124Z",
+      "lastTested": "2026-11-02T09:47:54.239Z",
+      "status": "passed",
+      "metrics": {
+        "buttonsTotal": 5,
+        "buttonsWithActions": 5,
+        "deadButtons": 0,
+        "linksTotal": 15,
+        "linksValid": 15,
+        "nativeAlerts": 0,
+        "contrastCompliant": true,
+        "swrCalls": 0,
+        "modalsTotal": 0
+      },
+      "issues": [],
+      "warnings": []
+    },
+    "pages/connector-pipeline-drawer/connector-pipeline-drawer.html": {
+      "pageName": "Connector & Pipeline Drawer",
+      "route": "connector-pipeline-drawer",
+      "fileHash": "sha256:a53d1d8d1122859cdf1c206e22a87442379589a7d270f316a7ef782a85727ba4",
+      "lastModified": "2026-11-02T09:47:54.124Z",
+      "lastTested": "2026-11-02T09:47:54.239Z",
+      "status": "passed",
+      "metrics": {
+        "buttonsTotal": 9,
+        "buttonsWithActions": 9,
+        "deadButtons": 0,
+        "linksTotal": 13,
+        "linksValid": 13,
+        "nativeAlerts": 0,
+        "contrastCompliant": true,
+        "swrCalls": 1,
+        "modalsTotal": 0
       },
       "issues": [],
       "warnings": [
         {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_LIGHT_BACKGROUND",
-          "message": "Container has \"bg-white\" without a corresponding \"dark:bg-*\" variant class (sidebar w-64 bg-white border-r border-slate-200 fl).",
-          "snippet": "<div class=\"sidebar w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 transition-all duration-300 z-30 select-none\">"
-        },
-        {
-          "rule": "Pass 11: Dark & Light Theme Compliance",
-          "type": "HARDCODED_DARK_TEXT",
-          "message": "Text has hardcoded dark color without a corresponding \"dark:text-*\" variant (bg-slate-50 text-slate-900 font-sans antialiased m).",
-          "snippet": "<div class=\"bg-slate-50 text-slate-900 font-sans antialiased min-h-screen flex\">"
+          "rule": "Pass 04: Modals Usage (Universal Dismissal)",
+          "type": "MODAL_DISMISSAL_MISSING",
+          "message": "Modal element detected, but script lacks standard backdrop click dismissal or Escape key listener to close active overlays."
         }
       ]
     }
@@ -580,6 +430,16 @@
     "suites": []
   },
   "history": [
+    {
+      "timestamp": "2026-11-02T09:47:54.239Z",
+      "action": "qa_full_audit",
+      "commit": "a766210",
+      "complianceRate": 100,
+      "pagesAudited": 12,
+      "status": "passed",
+      "agent": "Antigravity",
+      "details": "12/12 pages passed. Completed 20/20 QA passes."
+    },
     {
       "timestamp": "2026-11-01T11:22:28.294Z",
       "action": "qa_full_audit",
